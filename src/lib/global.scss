@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400&display=swap");
+
+:root {
+	--color-primary: #19191b;
+	--color-secondary: #2c2d32;
+	--color-tertiary: #888895;
+	--color-tertiary-light: #e7e7e7;
+	--color-black: #101011;
+
+	--color-accent-1: #d2a8ff;
+	--color-accent-2: #70ddc9;
+	--color-accent-3: #d8a06c;
+
+	--border-radius: 1rem;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: var(--color-primary);
+	color: var(--color-tertiary-light);
+	font-family: "Roboto", sans-serif;
+	font-size: 1rem;
+}
+
+h1 {
+	font-size: 7rem;
+	font-weight: 900;
+}
+
+h2 {
+	font-size: 5rem;
+}
+
+h3 {
+	font-size: 2rem;
+}
+
+code {
+	font-family: "Jetbrains Mono";
+}
+
+.skeleton-animation {
+	animation: skeleton-loading 1s linear infinite;
+	background-image: linear-gradient(
+		to right,
+		transparent 25%,
+		rgba(255 255 255 / 0.15),
+		transparent 75%
+	);
+	background-size: 400%;
+
+	@keyframes skeleton-loading {
+		from {
+			background-position: left;
+		}
+		to {
+			background-position: right;
+		}
+	}
+}
