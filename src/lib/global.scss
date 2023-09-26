@@ -7,7 +7,7 @@
 	--color-tertiary-light: #e7e7e7;
 	--color-black: #101011;
 
-	--color-accent-1: #d2a8ff;
+	--color-accent-1: #9599ee;
 	--color-accent-2: #70ddc9;
 	--color-accent-3: #d8a06c;
 
@@ -30,7 +30,7 @@ body {
 }
 
 h1 {
-	font-size: 7rem;
+	font-size: 8rem;
 	font-weight: 900;
 }
 
@@ -44,6 +44,14 @@ h3 {
 
 code {
 	font-family: "Jetbrains Mono";
+}
+
+button {
+	border: none;
+	background-color: transparent;
+	font-size: 1em;
+	color: inherit;
+	font-family: inherit;
 }
 
 .skeleton-animation {
