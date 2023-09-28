@@ -54,6 +54,16 @@ button {
 	font-family: inherit;
 }
 
+::-webkit-scrollbar {
+	background-color: var(--color-primary);
+	border-radius: var(--border-radius);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--color-secondary);
+	border-radius: var(--border-radius);
+}
+
 .skeleton-animation {
 	animation: skeleton-loading 1s linear infinite;
 	background-image: linear-gradient(
