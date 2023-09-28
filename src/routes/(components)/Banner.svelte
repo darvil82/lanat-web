@@ -10,7 +10,10 @@
 		Lanat is a command line argument parser for Java 17 with ease of use and
 		high customization possibilities in mind.
 	</p>
-	<Button primary>Get it now</Button>
+	<div class="buttons">
+		<Button primary>Get it now</Button>
+		<Button>Learn more</Button>
+	</div>
 </div>
 
 <style lang="scss">
@@ -29,5 +32,11 @@
 	.info {
 		text-align: center;
 		font-size: 1.25em;
+	}
+
+	.buttons {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
 </style>

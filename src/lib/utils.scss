@@ -1,0 +1,3 @@
+@function with-opacity($color, $opacity: 1) {
+	@return color-mix(in srgb, $color $opacity * 100%, rgba(0 0 0 / 0));
+}
