@@ -1,10 +1,19 @@
-<script>
+<script lang="ts">
 	import KeepCentered from "$lib/components/KeepCentered.svelte"
 	import Banner from "./Banner.svelte"
 	import ShowcaseCode from "./ShowcaseCode.svelte"
+	import GetNowOverlay from "./GetNow.svelte"
+
+	let isGetInfoShown = false
+
+	function showGetInfo(btn: HTMLButtonElement) {
+		isGetInfoShown = !isGetInfoShown
+	}
 </script>
 
 <section class="entrance">
+	<GetNowOverlay shown={isGetInfoShown} />
+
 	<div class="showcase-1">
 		<ShowcaseCode
 			number={1}
@@ -24,7 +33,7 @@ class MyProgram {
 	</div>
 
 	<div class="showcase-banner">
-		<Banner />
+		<Banner on:clickgetnow={e => showGetInfo(e.detail)} />
 	</div>
 
 	<div class="showcase-2">
@@ -65,8 +74,8 @@ class MyProgram {
 				1.25fr
 			);
 		gap: 2rem;
-		height: 100vh;
 		padding: 2rem;
+		position: relative;
 
 		.showcase-1 {
 			grid-column: 1 / span 2;

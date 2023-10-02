@@ -2,7 +2,7 @@
 	export let primary = false
 </script>
 
-<button class:primary>
+<button class:primary on:click>
 	<slot />
 </button>
 
@@ -35,7 +35,7 @@
 				0 -1rem $glow-blur 0 with-opacity(var(--color-accent-2), $glow-opacity);
 			outline: var(--color-accent-2) solid 0;
 			transition: outline-width 0.15s, outline-offset 0.15s,
-				box-shadow 0.25s, background-position 0.5s;
+				box-shadow 0.25s, background-position 0.5s, border-radius 0.25s;
 
 			&:hover {
 				outline-width: 0.25rem;
@@ -44,19 +44,35 @@
 				background-position: right;
 				box-shadow: 0 0 4rem 0 with-opacity(var(--color-accent-2), 0.5);
 			}
+
+			&:active {
+				outline-offset: 0;
+				background: var(--color-accent-2);
+			}
 		}
 
 		&:not(.primary) {
-			--color: var(--color-tertiary);
 			background-color: with-opacity(var(--color-primary), 0.5);
-			outline: var(--color) solid 0.15rem;
-			color: var(--color);
+			color: var(--color-tertiary);
+			outline: currentColor solid 0.15rem;
 			font-size: 1.5em;
 			transition: 0.25s;
 
 			&:hover {
-				--color: var(--color-tertiary-light);
-				box-shadow: 0 0 2rem 0 with-opacity(var(--color), 0.25);
+				color: var(--color-tertiary-light);
+				box-shadow: 0 0 2rem 0
+					with-opacity(var(--color-tertiary-light), 0.25);
+			}
+
+			&:active {
+				transition: 0s;
+				background-color: with-opacity(
+					var(--color-tertiary-light),
+					0.6
+				);
+				color: var(--color-primary);
+				box-shadow: 0 0 2rem 0
+					with-opacity(var(--color-tertiary-light), 0.5);
 			}
 		}
 	}

@@ -2,6 +2,13 @@
 	import Button from "$lib/components/Button.svelte"
 	import Image from "$lib/components/Image.svelte"
 	import logo_white from "$lib/images/logo/logo_white.png"
+	import { createEventDispatcher } from "svelte"
+
+	let dispatch = createEventDispatcher()
+
+	function showGetNow(e: MouseEvent) {
+		dispatch("clickgetnow", e.target)
+	}
 </script>
 
 <div class="banner">
@@ -11,8 +18,8 @@
 		high customization possibilities in mind.
 	</p>
 	<div class="buttons">
-		<Button primary>Get it now</Button>
-		<Button>Learn more</Button>
+		<Button primary on:click={showGetNow}>Get it now</Button>
+		<Button on:click={() => dispatch("clicklearnmore")}>Learn more</Button>
 	</div>
 </div>
 
