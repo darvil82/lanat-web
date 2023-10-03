@@ -11,6 +11,9 @@
 	--color-accent-2: #70ddc9;
 	--color-accent-3: #d8a06c;
 
+	--color-text-over-dark: var(--color-tertiary-light);
+	--color-text-over-light: var(--color-primary);
+
 	--border-radius: 1rem;
 }
 
@@ -24,9 +27,9 @@
 
 body {
 	background: var(--color-primary);
-	color: var(--color-tertiary-light);
+	color: var(--color-text-over-dark);
 	font-family: "Roboto", sans-serif;
-	font-size: 1rem;
+	font-size: 1.25rem;
 }
 
 h1 {
@@ -52,6 +55,7 @@ button {
 	font-size: 1em;
 	color: inherit;
 	font-family: inherit;
+	cursor: pointer;
 }
 
 ::-webkit-scrollbar {

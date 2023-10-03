@@ -14,5 +14,6 @@
 		background-color: var(--color-black);
 		height: 100%;
 		padding: 0.5rem;
+		font-size: 0.85rem;
 	}
 </style>

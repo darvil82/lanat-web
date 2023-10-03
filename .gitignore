@@ -1,3 +1,4 @@
 .svelte-kit
 .vscode
 .idea
+node_modules

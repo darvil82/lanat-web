@@ -1,18 +1,17 @@
 <script lang="ts">
-	import KeepCentered from "$lib/components/KeepCentered.svelte"
 	import Banner from "./Banner.svelte"
 	import ShowcaseCode from "./ShowcaseCode.svelte"
 	import GetNowOverlay from "./GetNow.svelte"
 
-	let isGetInfoShown = false
+	let getNowOverlay: GetNowOverlay
 
 	function showGetInfo(btn: HTMLButtonElement) {
-		isGetInfoShown = !isGetInfoShown
+		getNowOverlay.toggle(btn)
 	}
 </script>
 
 <section class="entrance">
-	<GetNowOverlay shown={isGetInfoShown} />
+	<GetNowOverlay bind:this={getNowOverlay} />
 
 	<div class="showcase-1">
 		<ShowcaseCode
@@ -68,14 +67,18 @@ class MyProgram {
 
 <style lang="scss">
 	.entrance {
+		$margin: 2rem;
 		display: grid;
 		grid-template-columns: repeat(2, minmax(5rem, 1fr)) minmax(
 				15rem,
 				1.25fr
 			);
 		gap: 2rem;
-		padding: 2rem;
+		margin: $margin;
 		position: relative;
+		border-radius: var(--border-radius);
+		overflow: hidden;
+		min-height: calc(100vh - $margin * 2);
 
 		.showcase-1 {
 			grid-column: 1 / span 2;

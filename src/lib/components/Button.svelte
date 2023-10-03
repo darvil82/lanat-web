@@ -14,10 +14,6 @@
 		font-weight: 900;
 		border-radius: 10px;
 
-		&:hover {
-			cursor: pointer;
-		}
-
 		&.primary {
 			$glow-blur: 3rem;
 			$glow-opacity: 0.22;
@@ -29,7 +25,7 @@
 			);
 			background-size: 200%;
 			color: var(--color-secondary);
-			font-size: 3em;
+			font-size: 3rem;
 			box-shadow: 0 1rem $glow-blur 0
 					with-opacity(var(--color-accent-1), $glow-opacity),
 				0 -1rem $glow-blur 0 with-opacity(var(--color-accent-2), $glow-opacity);

@@ -18,7 +18,9 @@
 		high customization possibilities in mind.
 	</p>
 	<div class="buttons">
-		<Button primary on:click={showGetNow}>Get it now</Button>
+		<div class="getbutton">
+			<Button primary on:click={showGetNow}>Get it now</Button>
+		</div>
 		<Button on:click={() => dispatch("clicklearnmore")}>Learn more</Button>
 	</div>
 </div>
@@ -38,7 +40,6 @@
 
 	.info {
 		text-align: center;
-		font-size: 1.25em;
 	}
 
 	.buttons {
