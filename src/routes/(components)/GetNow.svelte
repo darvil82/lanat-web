@@ -6,12 +6,12 @@
 	let animateTitle = false
 	let anchorPos = { top: 0, left: 0, width: 0 }
 
-	export function toggle(anchor: HTMLElement) {
+	function toggle(anchor: HTMLElement) {
 		if (!shown) show(anchor)
 		else hide()
 	}
 
-	function show(anchor: HTMLElement) {
+	export function show(anchor: HTMLElement) {
 		shown = true
 		anchorPos = {
 			top: anchor.offsetTop,
@@ -40,16 +40,16 @@
 		style:left={anchorPos.left + "px"}
 		style:top={anchorPos.top + "px"}
 		style:width={anchorPos.width + "px"}
-		out:fly={{ y: -150, opacity: 1, duration: 750 }}
+		out:fly={{ y: 1000, duration: 1000 }}
 	>
 		Get it now
 	</div>
-	<div class="get-now" transition:slide={{ duration: 1000 }}>
-		<div
-			class="close-btn"
-			in:fly={{ delay: 1000, y: -100, opacity: 1 }}
-			out:fly={{ y: -100, opacity: 1 }}
-		>
+	<div
+		class="get-now"
+		in:fly={{ duration: 1000, y: -1000 }}
+		out:fly={{ duration: 1000, y: 1000 }}
+	>
+		<div class="close-btn" in:fly={{ delay: 1000, y: -100 }} out:slide>
 			<CloseButton on:click={hide} />
 		</div>
 		<div class="content">

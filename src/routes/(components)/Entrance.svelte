@@ -6,7 +6,7 @@
 	let getNowOverlay: GetNowOverlay
 
 	function showGetInfo(btn: HTMLButtonElement) {
-		getNowOverlay.toggle(btn)
+		getNowOverlay.show(btn)
 	}
 </script>
 
