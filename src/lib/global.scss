@@ -23,6 +23,8 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1) !important;
+	transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1) !important;
 }
 
 body {

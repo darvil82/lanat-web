@@ -95,7 +95,7 @@
 		pointer-events: none;
 
 		&.animate {
-			transition: 0.5s;
+			transition: 0.75s;
 			font-size: 5rem;
 			padding: 0;
 			text-align: left;
