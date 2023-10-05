@@ -1,10 +1,15 @@
 <script lang="ts">
+	import IconLink from "$lib/components/BigLink.svelte"
 	import CloseButton from "$lib/components/CloseButton.svelte"
+	import Fa from "svelte-fa"
 	import { slide, fly } from "svelte/transition"
+	import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 	let shown = false
 	let animateTitle = false
 	let anchorPos = { top: 0, left: 0, width: 0 }
+	let getNowContainer: HTMLDivElement
+	let getNowContainerHeight = 0
 
 	function toggle(anchor: HTMLElement) {
 		if (!shown) show(anchor)
@@ -33,6 +38,8 @@
 	}
 </script>
 
+<svelte:window bind:innerHeight={getNowContainerHeight} />
+
 {#if shown}
 	<div
 		class="anim-title"
@@ -40,23 +47,33 @@
 		style:left={anchorPos.left + "px"}
 		style:top={anchorPos.top + "px"}
 		style:width={anchorPos.width + "px"}
-		out:fly={{ y: 1000, duration: 1000 }}
+		out:fly={{ duration: 750, y: getNowContainerHeight, opacity: 1 }}
 	>
 		Get it now
 	</div>
 	<div
+		bind:this={getNowContainer}
 		class="get-now"
-		in:fly={{ duration: 1000, y: -1000 }}
-		out:fly={{ duration: 1000, y: 1000 }}
+		in:fly={{ duration: 1000, y: -getNowContainerHeight, opacity: 1 }}
+		out:fly={{ duration: 750, y: getNowContainerHeight, opacity: 1 }}
 	>
-		<div class="close-btn" in:fly={{ delay: 1000, y: -100 }} out:slide>
+		<div
+			class="close-btn"
+			in:fly={{ delay: 1500, y: -100, opacity: 1 }}
+			out:slide
+		>
 			<CloseButton on:click={hide} />
 		</div>
-		<div class="content">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-			provident placeat harum sed eveniet accusantium nostrum
-			consequuntur? Quam esse dignissimos tempore eos laborum
-			exercitationem amet. Commodi vitae est accusamus pariatur!
+		<div class="content" in:fly={{ delay: 750, y: 50 }}>
+			<h3>Available on</h3>
+			<div class="links">
+				<IconLink
+					href="https://github.com/DarviL82/Lanat"
+					icon={faGithub}
+				>
+					Github
+				</IconLink>
+			</div>
 		</div>
 	</div>
 {/if}
@@ -75,7 +92,10 @@
 	}
 
 	.content {
-		color: var(--color-text-over-light);
+		color: var(--color-secondary);
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
 
 	.close-btn {

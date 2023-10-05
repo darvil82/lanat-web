@@ -16,6 +16,7 @@
 	<div class="showcase-1">
 		<ShowcaseCode
 			number={1}
+			gradientColor="var(--color-accent-1)"
 			title="Define your Command"
 			code={`@Command.Define
 class MyProgram {
@@ -38,17 +39,18 @@ class MyProgram {
 	<div class="showcase-2">
 		<ShowcaseCode
 			number={2}
-			title="Define your Command"
-			code={`@Command.Define
-class MyProgram {
-	@Argument.Define(required = true, positional = true, description = "The name of the user.")
-	public String name;
+			gradientColor="var(--color-accent-2)"
+			title="Put the stuff together"
+			code={`public static void main(String[] args) {
+    var myProgram = ArgumentParser.parseFromInto(MyProgram.class, CLInput.from(args));
 
-	@Argument.Define(argType = StringArgumentType.class, description = "The surname of the user.")
-	public Optional<String> surname;
+    System.out.printf(
+        "Welcome %s! You are %d years old.%n",
+        myProgram.name, myProgram.age
+    );
 
-	@Argument.Define(names = {"age", "a"}, description = "The age of the user.", prefix = '+')
-	public int age = 18;
+    // if no surname was specified, we'll show "none" instead
+    System.out.printf("The surname of the user is %s.", myProgram.surname.orElse("none"));
 }`}
 		/>
 	</div>
@@ -56,11 +58,11 @@ class MyProgram {
 	<div class="showcase-3">
 		<ShowcaseCode
 			number={3}
-			title="Define your Command"
-			code={`@Command.Define
-class MyProgram {
-	@Argument.Define(required = true, positional =
-`}
+			gradientColor="var(--color-accent-3)"
+			title="And use it"
+			code={`$ my-program michael +a20
+Welcome michael! You are 20 years old.
+The surname of the user is none.`}
 		/>
 	</div>
 </section>
