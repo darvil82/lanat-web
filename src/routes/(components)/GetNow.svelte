@@ -47,7 +47,7 @@
 		style:left={anchorPos.left + "px"}
 		style:top={anchorPos.top + "px"}
 		style:width={anchorPos.width + "px"}
-		out:fly={{ duration: 750, y: getNowContainerHeight, opacity: 1 }}
+		out:fly={{ duration: 500, y: 200 }}
 	>
 		Get it now
 	</div>
@@ -55,7 +55,7 @@
 		bind:this={getNowContainer}
 		class="get-now"
 		in:fly={{ duration: 1000, y: -getNowContainerHeight, opacity: 1 }}
-		out:fly={{ duration: 750, y: getNowContainerHeight, opacity: 1 }}
+		out:fly={{ duration: 500, y: 200 }}
 	>
 		<div
 			class="close-btn"
@@ -65,14 +65,22 @@
 			<CloseButton on:click={hide} />
 		</div>
 		<div class="content" in:fly={{ delay: 750, y: 50 }}>
-			<h3>Available on</h3>
-			<div class="links">
-				<IconLink
-					href="https://github.com/DarviL82/Lanat"
-					icon={faGithub}
-				>
-					Github
-				</IconLink>
+			<p>
+				Lanat is an open-source project publicly available. The code is
+				hosted on Github and you can download it from there. It's
+				licensed under the MIT license, so you can use it for free in
+				your projects.
+			</p>
+			<div>
+				<h3>Get it on</h3>
+				<div class="links">
+					<IconLink
+						href="https://github.com/DarviL82/Lanat?tab=readme-ov-file#gradle"
+						icon={faGithub}
+					>
+						Github
+					</IconLink>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -95,7 +103,18 @@
 		color: var(--color-secondary);
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: 2rem;
+
+		> div {
+			display: flex;
+			gap: 1rem;
+			flex-direction: column;
+		}
+
+		.links {
+			display: flex;
+			gap: 2rem;
+		}
 	}
 
 	.close-btn {
