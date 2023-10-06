@@ -9,6 +9,8 @@
 </button>
 
 <style lang="scss">
+	@import "$lib/utils.scss";
+
 	button {
 		background-color: var(--color-text-over-light);
 		padding: 1rem 2rem;
@@ -18,6 +20,10 @@
 		&:hover {
 			background-color: var(--color-text-over-dark);
 			color: var(--color-text-over-light);
+		}
+
+		@include is-mobile {
+			padding: 0.5rem 1rem;
 		}
 	}
 </style>

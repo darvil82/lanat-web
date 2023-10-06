@@ -33,7 +33,7 @@ class MyProgram {
 	</div>
 
 	<div class="showcase-banner">
-		<Banner on:clickgetnow={e => showGetInfo(e.detail)} />
+		<Banner on:clickgetnow={e => showGetInfo(e.detail)} on:clicklearnmore />
 	</div>
 
 	<div class="showcase-2">

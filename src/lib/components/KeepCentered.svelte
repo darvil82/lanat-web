@@ -7,7 +7,9 @@
 <style lang="scss">
 	.keep-centered {
 		display: grid;
-		grid-template-columns: 1fr minmax(1500px, 1fr) 1fr;
+		grid-template-columns:
+			minmax(5rem, 1fr)
+			minmax(200px, 1100px) minmax(5rem, 1fr);
 
 		.content {
 			grid-column: 2;
