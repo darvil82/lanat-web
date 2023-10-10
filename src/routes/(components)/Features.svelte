@@ -1,5 +1,6 @@
 <script lang="ts">
 	import KeepCentered from "$lib/components/KeepCentered.svelte"
+	import PrettyTitle from "./PrettyTitle.svelte"
 
 	let mainDiv: HTMLDivElement
 
@@ -9,7 +10,10 @@
 </script>
 
 <div class="features" bind:this={mainDiv}>
-	<KeepCentered>
-		<h1>Features</h1>
-	</KeepCentered>
+	<PrettyTitle />
 </div>
+
+<p>a feature</p>
+
+<style lang="scss">
+</style>

@@ -2,6 +2,11 @@
 	@return color-mix(in srgb, $color $opacity * 100%, rgba(0 0 0 / 0));
 }
 
+@mixin mask-image($image) {
+	-webkit-mask-image: $image;
+	mask-image: $image;
+}
+
 @mixin is-mobile {
 	@media (max-width: 767px) {
 		@content;

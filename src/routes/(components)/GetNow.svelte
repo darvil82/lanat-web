@@ -27,9 +27,9 @@
 		// move title in place after a bit
 		setTimeout(() => {
 			animateTitle = true
-			anchorPos.left = 50
-			anchorPos.top = 25
-		}, 300)
+			anchorPos.left = 105
+			anchorPos.top = 75
+		}, 200)
 	}
 
 	function hide() {
@@ -95,8 +95,8 @@
 			var(--color-accent-1),
 			var(--color-accent-2)
 		);
-		padding: 3.5rem;
-		padding-top: 9rem;
+		padding: 7rem;
+		padding-top: 15rem;
 	}
 
 	.content {
@@ -131,11 +131,10 @@
 		padding: 0.5rem 3rem;
 		font-weight: 900;
 		text-align: center;
-		pointer-events: none;
 
 		&.animate {
 			transition: 0.75s;
-			font-size: 5rem;
+			font-size: 7rem;
 			padding: 0;
 			text-align: left;
 			width: 100% !important; // to quickly override the width set with ts
