@@ -3,9 +3,7 @@
 </script>
 
 <div class="pretty-title">
-	<KeepCentered>
-		<h1 class="title">Features</h1>
-	</KeepCentered>
+	<h1 class="title">Features</h1>
 	<div class="gradient" />
 </div>
 
@@ -18,6 +16,7 @@
 
 	.title {
 		color: var(--color-accent-1);
+		margin-left: 7rem;
 	}
 
 	.gradient {
@@ -25,7 +24,8 @@
 		position: absolute;
 		inset: 0;
 		pointer-events: none;
-		top: 8.5rem;
+		top: 8rem;
+		z-index: -1;
 		background: conic-gradient(
 			from -90deg at 75% 1.3rem,
 			var(--color-accent-1) 0deg,
