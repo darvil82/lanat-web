@@ -16,11 +16,11 @@
 </div>
 
 <style lang="scss">
-	@import "$lib/utils.scss";
+	@use "$lib/utils.scss";
 
 	.feature {
 		padding: 2.5rem;
-		background-color: with-opacity(var(--color-secondary), 0.7);
+		background-color: utils.with-opacity(var(--color-secondary), 0.7);
 		backdrop-filter: blur(5rem);
 		border-radius: var(--border-radius);
 		display: flex;
@@ -28,8 +28,11 @@
 		gap: 1rem;
 		min-height: 30rem;
 
-		--shadow-top: #{with-opacity(var(--shadow-top-base-color), 0.2)};
-		--shadow-right: #{with-opacity(var(--shadow-right-base-color), 0.2)};
+		--shadow-top: #{utils.with-opacity(var(--shadow-top-base-color), 0.2)};
+		--shadow-right: #{utils.with-opacity(
+				var(--shadow-right-base-color),
+				0.2
+			)};
 
 		$shadow-size: 8rem;
 		box-shadow: inset -12rem 0 $shadow-size -10rem var(--shadow-right),

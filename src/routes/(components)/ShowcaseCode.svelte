@@ -19,7 +19,7 @@
 </div>
 
 <style lang="scss">
-	@import "$lib/utils.scss";
+	@use "$lib/utils.scss";
 
 	.showcase-code {
 		display: flex;
@@ -27,7 +27,7 @@
 		background-image: linear-gradient(
 			100deg,
 			var(--color-secondary) 20%,
-			with-opacity(var(--gradient), 0.5)
+			utils.with-opacity(var(--gradient), 0.5)
 		);
 		height: 100%;
 		border-radius: var(--border-radius);

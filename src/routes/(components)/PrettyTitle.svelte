@@ -3,7 +3,7 @@
 </div>
 
 <style lang="scss">
-	@import "$lib/utils.scss";
+	@use "$lib/utils.scss";
 
 	.pretty-title {
 		position: relative;
@@ -37,7 +37,7 @@
 				rgba(81, 162, 147, 0) 360deg
 			);
 
-			@include mask-image(
+			@include utils.mask-image(
 				linear-gradient(
 					10deg,
 					transparent 30%,

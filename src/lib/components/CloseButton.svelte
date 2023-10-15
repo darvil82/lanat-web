@@ -9,7 +9,7 @@
 </button>
 
 <style lang="scss">
-	@import "$lib/utils.scss";
+	@use "$lib/utils.scss";
 
 	button {
 		background-color: var(--color-text-over-light);
@@ -22,7 +22,7 @@
 			color: var(--color-text-over-light);
 		}
 
-		@include is-mobile {
+		@include utils.is-mobile {
 			padding: 0.5rem 1rem;
 		}
 	}
