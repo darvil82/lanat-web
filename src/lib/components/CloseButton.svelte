@@ -22,7 +22,7 @@
 			color: var(--color-text-over-light);
 		}
 
-		@include utils.is-mobile {
+		@include utils.if-mobile {
 			padding: 0.5rem 1rem;
 		}
 	}

@@ -13,6 +13,10 @@
 <section class="entrance">
 	<GetNowOverlay bind:this={getNowOverlay} />
 
+	<div class="showcase-banner">
+		<Banner on:clickgetnow={e => showGetInfo(e.detail)} on:clicklearnmore />
+	</div>
+
 	<div class="showcase-1">
 		<ShowcaseCode
 			number={1}
@@ -30,10 +34,6 @@ class MyProgram {
 	public int age = 18;
 }`}
 		/>
-	</div>
-
-	<div class="showcase-banner">
-		<Banner on:clickgetnow={e => showGetInfo(e.detail)} on:clicklearnmore />
 	</div>
 
 	<div class="showcase-2">
@@ -68,6 +68,8 @@ The surname of the user is none.`}
 </section>
 
 <style lang="scss">
+	@use "$lib/utils.scss";
+
 	.entrance {
 		$margin: 2rem;
 		display: grid;
@@ -100,6 +102,11 @@ The surname of the user is none.`}
 		.showcase-3 {
 			grid-column: 3 / span 1;
 			grid-row: 7 / 12;
+		}
+
+		@include utils.if-tablet {
+			display: flex;
+			flex-direction: column;
 		}
 	}
 </style>

@@ -1,28 +1,42 @@
 <script lang="ts">
 	import IconLink from "$lib/components/BigLink.svelte"
 	import CloseButton from "$lib/components/CloseButton.svelte"
-	import Fa from "svelte-fa"
 	import { slide, fly } from "svelte/transition"
 	import { faGithub } from "@fortawesome/free-brands-svg-icons"
+	import { isTablet, setScrollingEnabled } from "$lib/scripts/utils"
 
 	let shown = false
 	let animateTitle = false
 	let anchorPos = { top: 0, left: 0, width: 0 }
-	let getNowContainer: HTMLDivElement
 	let getNowContainerHeight = 0
 
-	function toggle(anchor: HTMLElement) {
-		if (!shown) show(anchor)
-		else hide()
-	}
-
 	export function show(anchor: HTMLElement) {
-		shown = true
+		let newPos: Omit<typeof anchorPos, "width">
+
+		if (isTablet()) {
+			setScrollingEnabled(false)
+
+			const rect = anchor.getBoundingClientRect()
+
+			// on tablet the get-now container is fixed, so the position is relative to the viewport
+			newPos = {
+				top: rect.y,
+				left: rect.x,
+			}
+		} else {
+			// on desktop the get-now container is absolute, so the position is relative to the parent
+			newPos = {
+				top: anchor.offsetTop,
+				left: anchor.offsetLeft,
+			}
+		}
+
 		anchorPos = {
-			top: anchor.offsetTop,
-			left: anchor.offsetLeft,
+			...newPos,
 			width: anchor.offsetWidth,
 		}
+
+		shown = true
 
 		// move title in place after a bit
 		setTimeout(() => {
@@ -35,6 +49,7 @@
 	function hide() {
 		shown = false
 		animateTitle = false
+		setScrollingEnabled(true)
 	}
 </script>
 
@@ -52,7 +67,6 @@
 		Get it now
 	</div>
 	<div
-		bind:this={getNowContainer}
 		class="get-now"
 		in:fly={{ duration: 1000, y: -getNowContainerHeight, opacity: 1 }}
 		out:fly={{ duration: 500, y: 200 }}
@@ -87,6 +101,8 @@
 {/if}
 
 <style lang="scss">
+	@use "$lib/utils.scss";
+
 	.get-now {
 		position: absolute;
 		inset: 0;
@@ -97,30 +113,37 @@
 		);
 		padding: 7rem;
 		padding-top: 15rem;
-	}
+		transition: 0.75s;
 
-	.content {
-		color: var(--color-secondary);
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-
-		> div {
+		.content {
+			color: var(--color-secondary);
 			display: flex;
-			gap: 1rem;
 			flex-direction: column;
-		}
-
-		.links {
-			display: flex;
 			gap: 2rem;
-		}
-	}
 
-	.close-btn {
-		position: absolute;
-		top: 0;
-		right: 2rem;
+			> div {
+				display: flex;
+				gap: 1rem;
+				flex-direction: column;
+			}
+
+			.links {
+				display: flex;
+				gap: 2rem;
+			}
+		}
+
+		.close-btn {
+			position: absolute;
+			top: 0;
+			right: 2rem;
+		}
+
+		@include utils.if-tablet {
+			position: fixed;
+			padding: 2rem;
+			padding-top: 10rem;
+		}
 	}
 
 	.anim-title {
@@ -138,6 +161,16 @@
 			padding: 0;
 			text-align: left;
 			width: 100% !important; // to quickly override the width set with ts
+		}
+
+		@include utils.if-tablet {
+			position: fixed;
+
+			&.animate {
+				// we change this here so that if the window is resized, the title moves with it
+				translate: -4.75rem -2rem;
+				font-size: 5rem;
+			}
 		}
 	}
 </style>

@@ -7,14 +7,14 @@
 	mask-image: $image;
 }
 
-@mixin is-mobile {
-	@media (max-width: 767px) {
+@mixin if-mobile {
+	@media (max-width: 768px) {
 		@content;
 	}
 }
 
-@mixin is-tablet {
-	@media (min-width: 768px) and (max-width: 1023px) {
+@mixin if-tablet {
+	@media (max-width: 1024px) {
 		@content;
 	}
 }

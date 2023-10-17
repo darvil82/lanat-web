@@ -32,6 +32,11 @@ body {
 	color: var(--color-text-over-dark);
 	font-family: "Roboto", sans-serif;
 	font-size: 1.25rem;
+
+	&.no-scroll {
+		overflow: hidden;
+		height: 100%;
+	}
 }
 
 h1,
@@ -103,4 +108,8 @@ button {
 			background-position: right;
 		}
 	}
+}
+
+.dummy {
+	display: none;
 }

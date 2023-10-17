@@ -60,36 +60,34 @@
 				glowTop="var(--color-accent-1)"
 				glowRight="var(--color-accent-2)"
 			>
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae
-				beatae laudantium natus corrupti fugit dignissimos numquam
-				laborum ratione. Expedita rerum nisi magnam ullam commodi
-				veritatis tempore consequuntur architecto beatae quia!
+				Make the users of your software be glad they made that error.
+				Completely customizable error messages with different error
+				levels.
 			</Feature>
 		</div>
 		<div class="grid" bind:this={featureGrid}>
-			<Feature title="Readable errors">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae
-				beatae laudantium natus corrupti fugit dignissimos numquam
-				laborum ratione. Expedita rerum nisi magnam ullam commodi
-				veritatis tempore consequuntur architecto beatae quia!
+			<Feature title="Automated help messages">
+				Detailed help messages automatically generated for you, based on
+				the structure of your commands.
 			</Feature>
-			<Feature title="Readable errors">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae
-				beatae laudantium natus corrupti fugit dignissimos numquam
-				laborum ratione. Expedita rerum nisi magnam ullam commodi
-				veritatis tempore consequuntur architecto beatae quia!
+			<Feature title="Rich text formatting">
+				Use tools that easily allow you to format text in descriptions
+				with colors, and other text formatting when displaying it on the
+				terminal.
 			</Feature>
-			<Feature title="Readable errors">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae
-				beatae laudantium natus corrupti fugit dignissimos numquam
-				laborum ratione. Expedita rerum nisi magnam ullam commodi
-				veritatis tempore consequuntur architecto beatae quia!
+			<Feature title="Design your own Argument Types">
+				Effortlessly create your own sub-parsers that later will be used
+				to parse the values an argument receives. Lanat comes with many
+				Argument Types already made for you.
 			</Feature>
-			<Feature title="Readable errors">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae
-				beatae laudantium natus corrupti fugit dignissimos numquam
-				laborum ratione. Expedita rerum nisi magnam ullam commodi
-				veritatis tempore consequuntur architecto beatae quia!
+			<Feature title="Define your Commands on your preferred way">
+				Commands can be defined by creating a class with properties and
+				using annotations to define the arguments your command will
+				contain, but if you are not a fan of reflection, or you just
+				don’t want to do it that way, you can always define your
+				commands in the more manual way, which is still dead easy! In
+				fact, the reflection way of doing it, uses the imperative way
+				internally.
 			</Feature>
 		</div>
 	</div>
