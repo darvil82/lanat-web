@@ -1,5 +1,4 @@
 <script lang="ts">
-	import KeepCentered from "$lib/components/KeepCentered.svelte"
 	import { onMount } from "svelte"
 	import Feature from "./Feature.svelte"
 	import PrettyTitle from "./PrettyTitle.svelte"
@@ -94,8 +93,10 @@
 </div>
 
 <style lang="scss">
+	@use "$lib/utils.scss";
+
 	.features {
-		margin: 7rem;
+		margin: min(7rem, 10vw);
 		margin-top: 9rem;
 		display: flex;
 		flex-direction: column;
@@ -105,13 +106,20 @@
 			display: grid;
 			gap: 2rem;
 			grid-template-columns: 1fr 1fr;
+
+			@include utils.if-tablet() {
+				grid-template-columns: 1fr;
+			}
 		}
 
 		.grid {
 			display: grid;
 			gap: 2rem;
-			// make grid act as flex-wrap
 			grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+
+			@include utils.if-tablet() {
+				grid-template-columns: 1fr;
+			}
 		}
 	}
 </style>

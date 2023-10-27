@@ -37,5 +37,9 @@
 		$shadow-size: 8rem;
 		box-shadow: inset -12rem 0 $shadow-size -10rem var(--shadow-right),
 			inset 0 12rem $shadow-size -10rem var(--shadow-top);
+
+		@include utils.if-mobile {
+			padding: 1.5rem;
+		}
 	}
 </style>

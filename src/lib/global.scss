@@ -1,3 +1,4 @@
+@use "$lib/utils.scss";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400&display=swap");
 
 :root {
@@ -48,14 +49,26 @@ h3 {
 h1 {
 	font-size: 8rem;
 	font-weight: 900;
+
+	@include utils.if-mobile() {
+		font-size: min(6rem, 15vw);
+	}
 }
 
 h2 {
 	font-size: 4rem;
+
+	@include utils.if-mobile() {
+		font-size: min(3rem, 10vw);
+	}
 }
 
 h3 {
 	font-size: 2rem;
+
+	@include utils.if-mobile() {
+		font-size: min(1.5rem, 5vw);
+	}
 }
 
 code {
