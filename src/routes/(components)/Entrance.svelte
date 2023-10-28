@@ -22,7 +22,8 @@
 			number={1}
 			gradientColor="var(--color-accent-1)"
 			title="Define your Command"
-			code={`@Command.Define
+			code={`
+@Command.Define
 class MyProgram {
 	@Argument.Define(required = true, positional = true, description = "The name of the user.")
 	public String name;
@@ -32,7 +33,8 @@ class MyProgram {
 
 	@Argument.Define(names = {"age", "a"}, description = "The age of the user.", prefix = '+')
 	public int age = 18;
-}`}
+}
+`}
 		/>
 	</div>
 
@@ -41,7 +43,8 @@ class MyProgram {
 			number={2}
 			gradientColor="var(--color-accent-2)"
 			title="Put the stuff together"
-			code={`public static void main(String[] args) {
+			code={`
+public static void main(String[] args) {
     var myProgram = ArgumentParser.parseFromInto(MyProgram.class, CLInput.from(args));
 
     System.out.printf(
@@ -51,7 +54,8 @@ class MyProgram {
 
     // if no surname was specified, we'll show "none" instead
     System.out.printf("The surname of the user is %s.", myProgram.surname.orElse("none"));
-}`}
+}
+`}
 		/>
 	</div>
 
@@ -60,9 +64,11 @@ class MyProgram {
 			number={3}
 			gradientColor="var(--color-accent-3)"
 			title="And use it"
-			code={`$ my-program michael +a20
+			code={`
+$ my-program michael +a20
 Welcome michael! You are 20 years old.
-The surname of the user is none.`}
+The surname of the user is none.
+`}
 		/>
 	</div>
 </section>

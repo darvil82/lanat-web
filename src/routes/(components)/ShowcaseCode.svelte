@@ -13,9 +13,7 @@
 		<h1>{number}</h1>
 		<h3>{title}</h3>
 	</header>
-	<div class="code-wrapper">
-		<Code {code} />
-	</div>
+	<Code {code} />
 </div>
 
 <style lang="scss">
@@ -33,12 +31,6 @@
 		border-radius: var(--border-radius);
 	}
 
-	.code-wrapper {
-		border-radius: var(--border-radius);
-		overflow: hidden;
-		flex-grow: 1;
-	}
-
 	header {
 		display: flex;
 		align-items: center;
@@ -46,6 +38,7 @@
 		padding-inline: 1.5rem;
 
 		h1 {
+			font-size: 7rem;
 			color: var(--color-tertiary);
 		}
 	}
