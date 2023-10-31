@@ -1,5 +1,5 @@
 <script>
-	import "$lib/global.scss"
+	import "./app.scss"
 	import "svelte-highlight/styles/github-dark.css"
 </script>
 
