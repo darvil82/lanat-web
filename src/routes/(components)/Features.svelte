@@ -4,6 +4,7 @@
 	import PrettyTitle from "./PrettyTitle.svelte"
 	import { isTablet } from "$lib/scripts/utils"
 	import Code from "$lib/components/Code.svelte"
+	import Terminal from "$lib/components/Terminal.svelte"
 
 	let mainDiv: HTMLDivElement
 	let featureGrid: HTMLDivElement
@@ -64,28 +65,10 @@
 				Make the users of your software be glad they made that error.
 				Completely customizable error messages with different error
 				levels.
-				<Code
-					code={`
+				<Terminal
+					stdout={`
 @Command.Define
-class MyProgram {
-	@Argument.Define(required = true, positional = true, description = "The name of the user.")
-	public String name;
 
-	@Argument.Define(argType = StringArgumentType.class, description = "The surname of the user.")
-	public Optional<String> surname;
-
-	@Argument.Define(names = {"age", "a"}, description = "The age of the user.", prefix = '+')
-	public int age = 18;
-
-	@InitDef
-	public static void beforeInit(@NotNull CommandBuildHelper cmdBuildHelper) {
-		// configure the argument "age" to have an argument type of
-		// number range and set the range to 1-100
-		cmdBuildHelper.<NumberRangeArgumentType<Integer>, Integer>getArgument("age")
-			.withArgType(new NumberRangeArgumentType<>(1, 100))
-			.onOk(v -> System.out.println("The age is valid!"));
-	}
-}
 				`}
 				/>
 			</Feature>
