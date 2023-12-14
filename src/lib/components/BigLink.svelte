@@ -15,6 +15,8 @@
 </Link>
 
 <style lang="scss">
+	@use "$lib/utils.scss";
+
 	.link-wrapper {
 		background-color: var(--color-secondary);
 		color: var(--color-text-over-dark);
@@ -29,6 +31,11 @@
 		transition: 0.1s;
 		aspect-ratio: 1;
 		width: 15rem;
+
+		@include utils.if-mobile {
+			width: 12rem;
+			font-size: 1.5rem;
+		}
 
 		&:hover {
 			background-color: var(--color-text-over-dark);

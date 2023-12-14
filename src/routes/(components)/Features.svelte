@@ -201,11 +201,12 @@ class MyProgram {
 	@use "$lib/utils.scss";
 
 	.features {
-		margin: min(7rem, 10vw);
-		margin-top: min(9rem, 12vw);
+		margin: 5rem;
+		margin-top: 5rem;
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
+		font-size: 1rem;
 
 		.first-row {
 			display: grid;
@@ -220,7 +221,7 @@ class MyProgram {
 		.grid {
 			display: grid;
 			gap: 2rem;
-			grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
 
 			@include utils.if-tablet() {
 				grid-template-columns: minmax(10rem, 1fr);

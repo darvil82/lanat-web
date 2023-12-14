@@ -19,7 +19,7 @@
 	@use "$lib/utils.scss";
 
 	.feature {
-		padding: 2.5rem;
+		padding: 2rem;
 		background-color: utils.with-opacity(var(--color-secondary), 0.7);
 		backdrop-filter: blur(5rem);
 		border-radius: var(--border-radius);

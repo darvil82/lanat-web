@@ -2,7 +2,7 @@
 	import IconLink from "$lib/components/BigLink.svelte"
 	import CloseButton from "$lib/components/CloseButton.svelte"
 	import { slide, fly } from "svelte/transition"
-	import { faGithub } from "@fortawesome/free-brands-svg-icons"
+	import { faJava, faGithub } from "@fortawesome/free-brands-svg-icons"
 	import { isTablet, setScrollingEnabled } from "$lib/scripts/utils"
 
 	let shown = false
@@ -15,7 +15,6 @@
 
 		if (isTablet()) {
 			setScrollingEnabled(false)
-
 			const rect = anchor.getBoundingClientRect()
 
 			// on tablet the get-now container is fixed, so the position is relative to the viewport
@@ -24,6 +23,7 @@
 				left: rect.x,
 			}
 		} else {
+			scrollTo({ top: 0, behavior: "smooth" })
 			// on desktop the get-now container is absolute, so the position is relative to the parent
 			newPos = {
 				top: anchor.offsetTop,
@@ -53,7 +53,16 @@
 	}
 </script>
 
-<svelte:window bind:innerHeight={getNowContainerHeight} />
+<svelte:window
+	bind:innerHeight={getNowContainerHeight}
+	on:resize={() => {
+		if (!shown) return
+
+		if (isTablet()) scrollTo(0, 0)
+
+		setScrollingEnabled(!isTablet())
+	}}
+/>
 
 {#if shown}
 	<div
@@ -89,10 +98,16 @@
 				<h3>Get it on</h3>
 				<div class="links">
 					<IconLink
-						href="https://github.com/DarviL82/Lanat?tab=readme-ov-file#gradle"
+						href="https://github.com/DarviL82/Lanat/packages/"
 						icon={faGithub}
 					>
 						Github
+					</IconLink>
+					<IconLink
+						href="https://github.com/DarviL82/Lanat?tab=readme-ov-file#installation"
+						icon={faJava}
+					>
+						Maven
 					</IconLink>
 				</div>
 			</div>
@@ -129,6 +144,7 @@
 
 			.links {
 				display: flex;
+				flex-wrap: wrap;
 				gap: 2rem;
 			}
 		}
