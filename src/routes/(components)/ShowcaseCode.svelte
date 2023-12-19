@@ -13,7 +13,7 @@
 		<h1>{number}</h1>
 		<h3>{title}</h3>
 	</header>
-	<Code {code} />
+	<Code {code} fontSize="1.5vh" />
 </div>
 
 <style lang="scss">
@@ -36,6 +36,7 @@
 		align-items: center;
 		gap: 1rem;
 		padding-inline: 1.5rem;
+		padding-block: 0.5vh;
 
 		h1 {
 			font-size: 7rem;
