@@ -1,11 +1,5 @@
-<script lang="ts">
-	import Convert from "ansi-to-html"
-
-	export let stdout: string
-</script>
-
 <div class="code-wrapper">
-	{@html new Convert().toHtml(stdout)}
+	<slot />
 </div>
 
 <style lang="scss">
@@ -18,4 +12,14 @@
 		font-size: 0.85rem;
 		border-radius: var(--border-radius);
 	}
+
+	@mixin color-tag($tagname, $color) {
+		:global(#{$tagname}) {
+			color: $color;
+		}
+	}
+
+	@include color-tag(argument, #ffcb6b);
+	@include color-tag(command, #ffcb6b);
+	@include color-tag(value, #ffcb6b);
 </style>

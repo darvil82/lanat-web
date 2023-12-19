@@ -65,42 +65,55 @@
 				Make the users of your software be glad they made that error.
 				Completely customizable error messages with different error
 				levels.
-				<Terminal
-					stdout={`
-@Command.Define
+				<!--
+$ josh ! --number 2 sub1 --required 1 --number 121
 
-				`}
-				/>
+[91m[1m ┌─ERROR[22m[97m
+[96mmy-program[97m [93mjosh[97m [91m[7m[1m![27m[22m[97m [92m--number[97m [93m2[97m [96msub1[97m [92m--required[97m [93m1[97m [92m--number[97m [93m121[97m
+ [91m[1m│ [22m[97mThe user cannot be '!'.
+ [91m[1m└────────────────── ───── ── ─[22m[97m
+
+[91m[1m ┌─ERROR[22m[97m
+[96m[2mmy-program[22m[97m [93m[2mjosh[22m[97m [93m[2m![22m[97m [92m[2m--number[22m[97m [93m[2m2[22m[97m [96msub1[97m [92m--required[97m [93m1[97m [92m--number[97m [91m[7m[1m121[27m[22m[97m
+ [91m[1m│ [22m[97mValue must be between 0.0 and 15.23.
+ [91m[1m└─────────────────────────────── ───── ── ─[22m[97m
+				-->
 			</Feature>
 		</div>
 		<div class="grid" bind:this={featureGrid}>
 			<Feature title="Automated help messages">
 				Detailed help messages automatically generated for you, based on
 				the structure of your commands.
-				<Code
-					code={`
-@Command.Define
-class MyProgram {
-	@Argument.Define(required = true, positional = true, description = "The name of the user.")
-	public String name;
 
-	@Argument.Define(argType = StringArgumentType.class, description = "The surname of the user.")
-	public Optional<String> surname;
+				<!-- [97m[1mmy-program[22m:
 
-	@Argument.Define(names = {"age", "a"}, description = "The age of the user.", prefix = '+')
-	public int age = 18;
+This is the description of my program. What do you think about it? Oh by the
+way, don't forget to use the [97m[1m[4mExample1Type(user/u)[22m[24m argument!
 
-	@InitDef
-	public static void beforeInit(@NotNull CommandBuildHelper cmdBuildHelper) {
-		// configure the argument "age" to have an argument type of
-		// number range and set the range to 1-100
-		cmdBuildHelper.<NumberRangeArgumentType<Integer>, Integer>getArgument("age")
-			.withArgType(new NumberRangeArgumentType<>(1, 100))
-			.onOk(v -> System.out.println("The age is valid!"));
-	}
-}
-				`}
-				/>
+[97m[1m[4mExample1Type(user/u)[22m[24m [94m--test Integer[97m [95m--help/h[97m [96m--counter/c[97m [91m-t[97m [92m--number Double[33m[0.0-15.23][92m[97m
+[93m++string/s string[93m{3, 5}[93m[97m {[97m[1msub1[22m}
+
+Description:
+
+[97m[1m[4mExample1Type(user/u)[22m[24m:
+   Specify the user/s to use.
+
+[95m--help/h[97m:
+   Shows this message.
+
+[92m--number Double[33m[0.0-15.23][92m[97m:
+   The value that matters the most (not really). Hey, this thing is generated
+   automatically as well!: A high precision floating point number. Must be between
+   0.0 and 15.23. (Inclusive)
+
+Sub-Commands:
+
+[97m[1msub1[22m:
+   Now this is the description of the subcommand inside the main command.
+
+
+Here's some more extra information about my program. Really don't know how to fill
+this out...-->
 			</Feature>
 			<Feature title="Rich text formatting">
 				Use tools that easily allow you to format text in descriptions
