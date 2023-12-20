@@ -17,9 +17,17 @@
 	}
 
 	@mixin color-tag($tagname, $color) {
-		:global(#{$tagname}) {
+		:global(#{"" + $tagname}) {
 			--color: #{$color};
 			color: var(--color);
+		}
+	}
+
+	@mixin errorlevel-tag($tagname, $color) {
+		@include color-tag($tagname, $color);
+
+		:global(#{"" + $tagname}) {
+			font-weight: bold;
 		}
 	}
 
@@ -29,17 +37,10 @@
 	@include color-tag(green, #5af78e);
 	@include color-tag(purple, #c561ff);
 
-	:global(error) {
-		--color: tomato;
-		color: var(--color);
-		font-weight: bold;
-	}
-
-	:global(warning) {
-		--color: #ffcb6b;
-		color: var(--color);
-		font-weight: bold;
-	}
+	@include errorlevel-tag(error, tomato);
+	@include errorlevel-tag(warning, #ffcb6b);
+	@include errorlevel-tag(info, #68a9ff);
+	@include errorlevel-tag(debug, #5af78e);
 
 	:global([highlight]) {
 		background-color: var(--color);

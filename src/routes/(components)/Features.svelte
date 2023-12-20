@@ -5,10 +5,11 @@
 	import { isTablet } from "$lib/scripts/utils"
 	import Code from "$lib/components/Code.svelte"
 	import Terminal from "$lib/components/Terminal.svelte"
-	import HighlightInfo from "$lib/components/HighlightInfo.svelte"
+	import HighlightInfo from "$lib/components/highlightInfo/HighlightInfo.svelte"
 
 	let mainDiv: HTMLDivElement
 	let featureGrid: HTMLDivElement
+	let mainFeaturesContainer: HTMLDivElement
 
 	const FEATURE_PROPERTY_POS = "--shadow-top-base-color"
 	const FEATURE_PROPERTY_COLOR = "var(--color-accent-2)"
@@ -49,14 +50,25 @@
 			})
 	}
 
-	onMount(updateFeaturesGlow)
+	function setZIndices() {
+		mainFeaturesContainer
+			.querySelectorAll<HTMLDivElement>(".feature")
+			.forEach((feature, i, list) => {
+				feature.style.zIndex = `${list.length - i}`
+			})
+	}
+
+	onMount(() => {
+		setZIndices()
+		updateFeaturesGlow()
+	})
 </script>
 
 <svelte:window on:resize={updateFeaturesGlow} />
 
 <div bind:this={mainDiv}>
 	<PrettyTitle />
-	<div class="features">
+	<div class="features" bind:this={mainFeaturesContainer}>
 		<div class="first-row">
 			<Feature
 				title="Readable errors"
@@ -113,11 +125,19 @@
 						</error>
 
 						<svelte:fragment slot="info">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Explicabo vitae dolorum deserunt voluptatibus
-							dicta, tenetur saepe vel esse necessitatibus ut quae
-							illo consectetur a quo doloremque fugit, voluptatem
-							ipsa amet!
+							<p>
+								Errors can have different levels, those being
+								<error>ERROR</error>, <warning>WARNING</warning>
+								, <info>INFO</info> and <debug>DEBUG</debug>. As
+								you might have noticed, the error messages are
+								colored according to their level.
+							</p>
+							<p>
+								By default, errors with a level of
+								<error>ERROR</error>
+								will cause the program to exit with a non-zero exit
+								code.
+							</p>
 						</svelte:fragment>
 					</HighlightInfo>
 				</Terminal>

@@ -89,6 +89,10 @@ a {
 
 p {
 	max-width: max(50rem, 50vw);
+
+	&:not(:last-child) {
+		margin-bottom: 0.25rem;
+	}
 }
 
 button {
