@@ -70,16 +70,13 @@
 		cursor: pointer;
 		text-align: left;
 		border-radius: calc(var(--border-radius) / 2);
-		outline: 3px dashed utils.with-opacity(var(--color-secondary), 0.5);
+		background-color: utils.with-opacity(var(--color-secondary), 0.5);
+		outline: 3px dashed var(--color-tertiary);
 		transition: 0.25s;
 
 		&:hover {
-			outline: 2px solid var(--color-secondary);
-			background-color: utils.with-opacity(var(--color-secondary), 0.2);
-		}
-
-		&:active {
-			outline: 2px solid var(--color-tertiary);
+			outline-style: solid;
+			background-color: utils.with-opacity(var(--color-secondary), 0.75);
 		}
 
 		&.eyegrabber::after {

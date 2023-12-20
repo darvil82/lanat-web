@@ -18,7 +18,7 @@
 		inset: 0;
 		bottom: unset;
 		background-color: var(--color-secondary);
-		outline: 2px solid var(--color-tertiary);
+		outline: 3px solid var(--color-tertiary);
 		border-radius: calc(var(--border-radius) / 2);
 		box-shadow: 0 0 1rem var(--color-secondary);
 		transition: 0.5s;

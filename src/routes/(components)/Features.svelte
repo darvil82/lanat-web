@@ -148,35 +148,58 @@
 				Detailed help messages automatically generated for you, based on
 				the structure of your commands.
 
-				<!-- [97m[1mmy-program[22m:
+				<Terminal>
+					<!-- $ my-program --help -->
+					$ my-program --help<br />
+					<br />
 
-This is the description of my program. What do you think about it? Oh by the
-way, don't forget to use the [97m[1m[4mExample1Type(user/u)[22m[24m argument!
+					This is the description of my program. What do you think
+					about it? Oh by the way, don't forget to use the
+					<HighlightInfo>
+						<aqua><u><b>Example1Type(user/u)</b></u></aqua>
 
-[97m[1m[4mExample1Type(user/u)[22m[24m [94m--test Integer[97m [95m--help/h[97m [96m--counter/c[97m [91m-t[97m [92m--number Double[33m[0.0-15.23][92m[97m
-[93m++string/s string[93m{3, 5}[93m[97m {[97m[1msub1[22m}
+						<svelte:fragment slot="info">
+							When defining descriptions, you can reference other
+							elements such as arguments, as seen here.
+						</svelte:fragment>
+					</HighlightInfo> argument!
+					<br /><br />
 
-Description:
+					<aqua><u><b>Example1Type(user/u)</b></u></aqua>
+					<yellow>--test Integer</yellow> <green>--help/h</green>
+					<purple>--counter/c</purple>
+					<blue>--number Double<yellow>[0.0-15.23]</yellow></blue>
+					&lbrace;<b>sub1</b>&rbrace;
+					<br /><br />
 
-[97m[1m[4mExample1Type(user/u)[22m[24m:
-   Specify the user/s to use.
+					Description:<br /><br />
 
-[95m--help/h[97m:
-   Shows this message.
+					<aqua><u><b>Example1Type(user/u)</b></u></aqua>:<br />
+					&nbsp;&nbsp;Specify the user/s to use.<br /><br />
 
-[92m--number Double[33m[0.0-15.23][92m[97m:
-   The value that matters the most (not really). Hey, this thing is generated
-   automatically as well!: A high precision floating point number. Must be between
-   0.0 and 15.23. (Inclusive)
+					<green>--help/h</green>:<br />
+					&nbsp;&nbsp;Shows this message.<br /><br />
 
-Sub-Commands:
+					<blue>--number Double<yellow>[0.0-15.23]</yellow></blue>:
+					<br />
+					&nbsp;&nbsp;The value that matters the most (not really). Hey,
+					this thing is generated
+					<br />&nbsp;&nbsp;automatically as well!: A high precision
+					floating point number.
+					<br />&nbsp;&nbsp;Must be between 0.0 and 15.23. (Inclusive)
+					<br /><br />
 
-[97m[1msub1[22m:
-   Now this is the description of the subcommand inside the main command.
+					Sub-Commands:<br /><br />
 
+					<b>sub1</b>:<br />
+					&nbsp;&nbsp;Now this is the description of the subcommand inside
+					the main command.
 
-Here's some more extra information about my program. Really don't know how to fill
-this out...-->
+					<br /><br /><br />
+
+					Here's some more extra information about my program. Really
+					don't know how to fill this out...
+				</Terminal>
 			</Feature>
 			<Feature title="Rich text formatting">
 				Use tools that easily allow you to format text in descriptions
