@@ -16,6 +16,8 @@
 	--color-text-over-light: var(--color-primary);
 
 	--border-radius: 1rem;
+
+	--default-font: "Roboto", sans-serif;
 }
 
 *,
@@ -28,10 +30,15 @@
 	transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1) !important;
 }
 
+::selection {
+	background-color: var(--color-accent-2);
+	color: var(--color-text-over-light);
+}
+
 body {
 	background: var(--color-primary);
 	color: var(--color-text-over-dark);
-	font-family: "Roboto", sans-serif;
+	font-family: var(--default-font);
 	font-size: 1.25rem;
 
 	&.no-scroll {

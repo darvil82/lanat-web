@@ -5,6 +5,7 @@
 	import { isTablet } from "$lib/scripts/utils"
 	import Code from "$lib/components/Code.svelte"
 	import Terminal from "$lib/components/Terminal.svelte"
+	import HighlightInfo from "$lib/components/HighlightInfo.svelte"
 
 	let mainDiv: HTMLDivElement
 	let featureGrid: HTMLDivElement
@@ -65,19 +66,61 @@
 				Make the users of your software be glad they made that error.
 				Completely customizable error messages with different error
 				levels.
-				<!--
-$ josh ! --number 2 sub1 --required 1 --number 121
+				<Terminal>
+					<!-- $ josh ! --number 2 sub1 --required 1 --number 121 -->
+					$ josh ! --number 2 sub1 --required 1 --number 121<br />
+					<br />
 
-[91m[1m ┌─ERROR[22m[97m
-[96mmy-program[97m [93mjosh[97m [91m[7m[1m![27m[22m[97m [92m--number[97m [93m2[97m [96msub1[97m [92m--required[97m [93m1[97m [92m--number[97m [93m121[97m
- [91m[1m│ [22m[97mThe user cannot be '!'.
- [91m[1m└────────────────── ───── ── ─[22m[97m
+					<!--  ┌─ERROR -->
+					<warning>&nbsp;┌─WARNING</warning><br />
 
-[91m[1m ┌─ERROR[22m[97m
-[96m[2mmy-program[22m[97m [93m[2mjosh[22m[97m [93m[2m![22m[97m [92m[2m--number[22m[97m [93m[2m2[22m[97m [96msub1[97m [92m--required[97m [93m1[97m [92m--number[97m [91m[7m[1m121[27m[22m[97m
- [91m[1m│ [22m[97mValue must be between 0.0 and 15.23.
- [91m[1m└─────────────────────────────── ───── ── ─[22m[97m
-				-->
+					<!-- my-program josh --number 2 sub1 --required 1 --number 121 -->
+					<aqua>my-program</aqua> <yellow>josh</yellow>
+					<yellow highlight>!</yellow> <blue>--number</blue>
+					<yellow>2</yellow> <aqua>sub1</aqua>
+					<green>--required</green> <yellow>1</yellow>
+					<purple>--number</purple> <yellow>121</yellow><br />
+
+					<!--
+						│ The user cannot be '!'.
+						└────────────────── ───── ── ─
+						-->
+					<warning>
+						&nbsp;│ The user '!' was not found.<br />
+						&nbsp;└────────────────── ───── ── ─
+					</warning>
+
+					<br />
+					<br />
+
+					<HighlightInfo>
+						<!-- my-program josh --number 2 sub1 --required 1 --number 121 -->
+						<error>&nbsp;┌─ERROR</error><br />
+						<aqua>my-program</aqua> <yellow>josh</yellow>
+						<yellow>!</yellow> <blue>--number</blue>
+						<yellow>2</yellow> <aqua>sub1</aqua>
+						<green>--required</green> <yellow>1</yellow>
+						<purple>--number</purple>
+						<error highlight>121</error><br />
+
+						<!--
+					│ Value must be between 0.0 and 15.23.
+					└────────────────── ───── ── ─
+					-->
+						<error>
+							&nbsp;│ Value must be between 0.0 and 15.23.<br />
+							&nbsp;└────────────────── ───── ── ─
+						</error>
+
+						<svelte:fragment slot="info">
+							Lorem ipsum dolor sit amet consectetur adipisicing
+							elit. Explicabo vitae dolorum deserunt voluptatibus
+							dicta, tenetur saepe vel esse necessitatibus ut quae
+							illo consectetur a quo doloremque fugit, voluptatem
+							ipsa amet!
+						</svelte:fragment>
+					</HighlightInfo>
+				</Terminal>
 			</Feature>
 		</div>
 		<div class="grid" bind:this={featureGrid}>
