@@ -18,7 +18,6 @@
 		overflow: auto;
 		background-color: var(--color-black);
 		height: 100%;
-		padding: 0.5rem;
 		border-radius: var(--border-radius);
 	}
 </style>

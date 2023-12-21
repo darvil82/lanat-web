@@ -107,11 +107,21 @@ button {
 ::-webkit-scrollbar {
 	background-color: var(--color-primary);
 	border-radius: var(--border-radius);
+	height: 0.5rem;
+	width: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb {
 	background-color: var(--color-secondary);
 	border-radius: var(--border-radius);
+
+	&:hover {
+		background-color: #37373d;
+	}
+}
+
+::-webkit-scrollbar-corner {
+	background-color: transparent;
 }
 
 .skeleton-animation {

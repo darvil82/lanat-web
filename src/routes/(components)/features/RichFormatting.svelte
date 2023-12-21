@@ -1,0 +1,66 @@
+<script>
+	import Code from "$lib/components/Code.svelte"
+	import Terminal from "$lib/components/Terminal.svelte"
+	import Fa from "svelte-fa"
+
+	import Feature from "../Feature.svelte"
+	import { faDownLong } from "@fortawesome/free-solid-svg-icons"
+</script>
+
+<Feature title="Rich text formatting">
+	Use tools that easily allow you to format text in descriptions with colors,
+	and other text formatting when displaying it on the terminal.
+
+	<div class="wrapper">
+		<Code
+			code={`
+command.setDescription(
+	"<color=cyan>Hello <format=b,i>world!<format=reset> "
+	+ "<format=u>Here's some more <color=black:magenta>text<format=reset>."
+)`}
+		/>
+
+		<div class="arrow-icon">
+			<Fa icon={faDownLong} scale="4" color="var(--color-accent-1)" />
+		</div>
+
+		<Terminal>
+			<aqua>Hello <b><i>world!</i></b></aqua>
+			<u>Here's some more <purple highlight>text</purple>.</u>
+		</Terminal>
+	</div>
+
+	<p>
+		When setting the description of elements, you can use the formatting
+		tags that Lanat provides you with. (As seen above). You are not limited
+		with just coloring or formatting, tags can also be used to <i>embed</i>
+		the description of other elements, for example. Note that new custom tags
+		can be created as well, with their own functionality.
+	</p>
+</Feature>
+
+<style lang="scss">
+	@use "$lib/utils.scss";
+
+	.arrow-icon {
+		display: grid;
+		place-items: center;
+		z-index: 1;
+
+		@include utils.if-tablet {
+			place-items: end;
+
+			margin-right: 5rem;
+		}
+	}
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+
+		* > {
+			flex-grow: 1;
+		}
+	}
+</style>

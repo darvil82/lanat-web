@@ -31,7 +31,7 @@
 		}
 	}
 
-	@include color-tag(aqua, aqua);
+	@include color-tag(aqua, rgb(101, 255, 234));
 	@include color-tag(yellow, #ffcb6b);
 	@include color-tag(blue, #68a9ff);
 	@include color-tag(green, #5af78e);

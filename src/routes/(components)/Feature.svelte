@@ -4,12 +4,14 @@
 	export let title: string
 	export let glowTop: CSSColor = "transparent"
 	export let glowRight: CSSColor = "transparent"
+	export let gridSpan: number = 1
 </script>
 
 <div
 	class="feature"
 	style:--shadow-top-base-color={glowTop}
 	style:--shadow-right-base-color={glowRight}
+	style:grid-column={`span ${gridSpan}`}
 >
 	<h2>{title}</h2>
 	<slot />
