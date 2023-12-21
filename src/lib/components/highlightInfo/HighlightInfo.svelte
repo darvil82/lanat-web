@@ -86,6 +86,7 @@
 			right: 100%;
 			background: white;
 			mix-blend-mode: overlay;
+			border-radius: calc(var(--border-radius) / 2);
 			opacity: 0.5;
 			animation: eyegrabber 2.75s infinite forwards;
 

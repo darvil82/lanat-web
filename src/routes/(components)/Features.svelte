@@ -320,7 +320,7 @@ class MyProgram {
 		.grid {
 			display: grid;
 			gap: 2rem;
-			grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(47rem, 1fr));
 
 			@include utils.if-tablet() {
 				grid-template-columns: minmax(10rem, 1fr);
