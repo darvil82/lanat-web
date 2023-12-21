@@ -108,7 +108,6 @@ public T parseValues(@NotNull String @NotNull [] args) {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-rows: repeat(3, 1fr);
-		gap: 1rem;
 		max-height: 50rem;
 
 		:global(> :first-child) {
