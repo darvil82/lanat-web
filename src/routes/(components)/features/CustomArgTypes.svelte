@@ -4,7 +4,7 @@
 	import Feature from "../Feature.svelte"
 </script>
 
-<Feature title="Design your own Argument Types" gridSpan={2}>
+<Feature title="Design your own Argument Types">
 	Effortlessly create your own sub-parsers that later will be used to parse
 	the values an argument receives. Lanat comes with many Argument Types
 	already made for you.

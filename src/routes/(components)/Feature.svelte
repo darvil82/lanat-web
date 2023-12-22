@@ -4,14 +4,12 @@
 	export let title: string
 	export let glowTop: CSSColor = "transparent"
 	export let glowRight: CSSColor = "transparent"
-	export let gridSpan: number = 1
 </script>
 
 <div
 	class="feature"
 	style:--shadow-top-base-color={glowTop}
 	style:--shadow-right-base-color={glowRight}
-	style:grid-column={`span ${gridSpan}`}
 >
 	<h2>{title}</h2>
 	<slot />
@@ -37,7 +35,8 @@
 			)};
 
 		$shadow-size: 8rem;
-		box-shadow: inset -12rem 0 $shadow-size -10rem var(--shadow-right),
+		box-shadow:
+			inset -12rem 0 $shadow-size -10rem var(--shadow-right),
 			inset 0 12rem $shadow-size -10rem var(--shadow-top);
 
 		@include utils.if-mobile {
