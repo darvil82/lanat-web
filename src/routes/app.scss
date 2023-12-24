@@ -18,6 +18,8 @@
 	--border-radius: 1rem;
 
 	--default-font: "Roboto", sans-serif;
+
+	--scrollbar-size: 0.5rem;
 }
 
 *,
@@ -108,8 +110,8 @@ button {
 ::-webkit-scrollbar {
 	background-color: var(--color-primary);
 	border-radius: var(--border-radius);
-	height: 0.5rem;
-	width: 0.5rem;
+	height: var(--scrollbar-size);
+	width: var(--scrollbar-size);
 }
 
 ::-webkit-scrollbar-thumb {

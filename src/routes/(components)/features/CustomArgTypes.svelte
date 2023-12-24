@@ -13,6 +13,7 @@
 
 	<div class="codes">
 		<Code
+			disallowScroll
 			code={`
 /**
  * An argument type that takes an enum value.
@@ -70,13 +71,13 @@ public class EnumArgumentType<T extends Enum<T>> extends ArgumentType<T> {
 		/>
 		<div class="result">
 			<div class="result-info">
-				<p class="info">
+				<div class="info">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					Sapiente debitis minus repudiandae non reiciendis.
 					Accusantium ex facilis voluptatibus perspiciatis
 					praesentium! Repellendus unde ipsa debitis voluptas sint,
 					dolor illo excepturi eius!
-				</p>
+				</div>
 				<div class="code-wrapper">
 					<Code
 						code={`
@@ -91,30 +92,32 @@ enum Options {
 			</div>
 
 			<div class="result-info">
-				<p class="info">
+				<div class="info">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					Sapiente debitis minus repudiandae non reiciendis.
 					Accusantium ex facilis voluptatibus perspiciatis
 					praesentium! Repellendus unde ipsa debitis voluptas sint,
 					dolor illo excepturi eius!
-				</p>
+				</div>
 				<div class="code-wrapper">
 					<Code
 						code={`
-	Argument.create(new EnumArgumentType<>(Options.TOGGLE), "option");
-	`}
+Argument.create(
+	new EnumArgumentType<>(Options.TOGGLE)
+	, "option"
+);`}
 					/>
 				</div>
 			</div>
 
 			<div class="result-info">
-				<p class="info">
+				<div class="info">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					Sapiente debitis minus repudiandae non reiciendis.
 					Accusantium ex facilis voluptatibus perspiciatis
 					praesentium! Repellendus unde ipsa debitis voluptas sint,
 					dolor illo excepturi eius!
-				</p>
+				</div>
 				<div class="code-wrapper">
 					<Terminal>
 						<green>
@@ -134,15 +137,17 @@ enum Options {
 </Feature>
 
 <style lang="scss">
+	@use "$lib/utils.scss";
+
 	.codes {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-rows: repeat(3, 1fr);
-		max-height: 50rem;
 
 		:global(> :first-child) {
 			grid-column: 1 / span 3;
 			grid-row: 1 / span 3;
+			max-height: 50rem;
 		}
 
 		:global(> :last-child) {
@@ -151,9 +156,27 @@ enum Options {
 			border: 0.25rem solid var(--color-accent-2);
 			box-shadow: -2rem -2rem 5rem rgba(0, 0, 0, 0.575);
 		}
+
+		@include utils.if-tablet {
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr 1fr 1fr;
+
+			:global(> :first-child) {
+				grid-column: 1;
+				grid-row: 1 / 4;
+				margin-inline: 1rem;
+			}
+
+			:global(> :last-child) {
+				grid-column: 1;
+				grid-row: 2 / 4;
+				box-shadow: 0 -2rem 5rem rgba(0, 0, 0, 0.575);
+			}
+		}
 	}
 
 	.result {
+		position: relative;
 		display: grid;
 		grid-template-rows: 1fr 1fr 1fr;
 		flex-direction: column;
@@ -161,9 +184,11 @@ enum Options {
 		border-radius: var(--border-radius);
 		padding: 2rem;
 		background-color: var(--color-secondary);
+		max-width: 85rem;
 
 		.result-info {
-			display: flex;
+			display: grid;
+			grid-template-columns: 1fr minmax(20rem, 1fr);
 			gap: 2rem;
 			background-color: rgba(0, 0, 0, 0.295);
 			border-radius: var(--border-radius);
@@ -178,6 +203,14 @@ enum Options {
 
 			.code-wrapper {
 				flex-grow: 1;
+			}
+
+			@include utils.if-tablet {
+				grid-template-columns: 1fr;
+				grid-template-rows: 1fr 1fr;
+				gap: 1rem;
+				margin: 0;
+				padding: 1rem;
 			}
 		}
 	}
