@@ -81,8 +81,8 @@
 		<div class="grid" bind:this={featureGrid}>
 			<AutomatedHelpMessage />
 			<RichFormatting />
-			<CustomArgTypes />
 		</div>
+		<CustomArgTypes />
 	</div>
 </div>
 

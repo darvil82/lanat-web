@@ -21,11 +21,13 @@
 		outline: 3px solid var(--color-tertiary);
 		border-radius: calc(var(--border-radius) / 2);
 		box-shadow: 0 0 1rem var(--color-secondary);
+		min-width: 10rem;
 		transition: 0.5s;
 
 		.info {
 			padding: 0.5rem;
 			font-family: var(--default-font);
+			color: var(--color-text-over-dark);
 		}
 
 		.contents {

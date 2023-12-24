@@ -1,4 +1,5 @@
 <script>
+	import Tab from "$lib/components/Tab.svelte"
 	import Terminal from "$lib/components/Terminal.svelte"
 	import HighlightInfo from "$lib/components/highlightInfo/HighlightInfo.svelte"
 
@@ -14,8 +15,11 @@
 		$ my-program --help<br />
 		<br />
 
-		This is the description of my program. What do you think about it? Oh by
-		the way, don't forget to use the
+		<b>my-program</b>:<br /><br />
+
+		<Tab />This is the description of my program. What do you think about
+		it? Oh by the way,
+		<br /><Tab />don't forget to use the
 		<HighlightInfo>
 			<aqua><u><b>Example1Type(user/u)</b></u></aqua>
 
@@ -26,7 +30,7 @@
 		</HighlightInfo> argument!
 		<br /><br />
 
-		<aqua><u><b>Example1Type(user/u)</b></u></aqua>
+		<Tab /><aqua><u><b>Example1Type(user/u)</b></u></aqua>
 		<yellow>--test Integer</yellow> <green>--help/h</green>
 		<purple>--counter/c</purple>
 		<blue>--number Double<yellow>[0.0-15.23]</yellow></blue>
@@ -35,26 +39,26 @@
 
 		Description:<br /><br />
 
-		<aqua><u><b>Example1Type(user/u)</b></u></aqua>:<br />
-		&nbsp;&nbsp;Specify the user/s to use.<br /><br />
+		<Tab /><aqua><u><b>Example1Type(user/u)</b></u></aqua>:<br />
+		<Tab number={2} />Specify the user/s to use.<br /><br />
 
-		<green>--help/h</green>:<br />
-		&nbsp;&nbsp;Shows this message.<br /><br />
+		<Tab /><green>--help/h</green>:<br />
+		<Tab number={2} />Shows this message.<br /><br />
 
-		<blue>--number Double<yellow>[0.0-15.23]</yellow></blue>:
+		<Tab /><blue>--number Double<yellow>[0.0-15.23]</yellow></blue>:
 		<br />
-		&nbsp;&nbsp;The value that matters the most (not really). Hey, this thing
-		is generated
-		<br />&nbsp;&nbsp;automatically as well!: A high precision floating
-		point number.
-		<br />&nbsp;&nbsp;Must be between 0.0 and 15.23. (Inclusive)
+		<Tab number={2} />The value that matters the most (not really). Hey,
+		this thing is generated
+		<br /><Tab number={2} />automatically as well!: A high precision
+		floating point number.
+		<br /><Tab number={2} />Must be between 0.0 and 15.23. (Inclusive)
 		<br /><br />
 
 		Sub-Commands:<br /><br />
 
-		<b>sub1</b>:<br />
-		&nbsp;&nbsp;Now this is the description of the subcommand inside the main
-		command.
+		<Tab /><b>sub1</b>:<br />
+		<Tab number={2} />Now this is the description of the subcommand inside
+		the main command.
 
 		<br /><br /><br />
 
