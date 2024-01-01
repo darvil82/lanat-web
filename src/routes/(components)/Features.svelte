@@ -1,17 +1,12 @@
 <script lang="ts">
 	import { onMount } from "svelte"
-	import Feature from "./Feature.svelte"
 	import PrettyTitle from "./PrettyTitle.svelte"
 	import { isTablet } from "$lib/scripts/utils"
-	import Code from "$lib/components/Code.svelte"
-	import Terminal from "$lib/components/Terminal.svelte"
-	import HighlightInfo from "$lib/components/highlightInfo/HighlightInfo.svelte"
-	import Fa from "svelte-fa"
-	import { faDownLong } from "@fortawesome/free-solid-svg-icons"
 	import ReadableErrors from "./features/ReadableErrors.svelte"
 	import AutomatedHelpMessage from "./features/AutomatedHelpMessage.svelte"
 	import RichFormatting from "./features/RichFormatting.svelte"
 	import CustomArgTypes from "./features/CustomArgTypes.svelte"
+	import EndTriangleShape from "./features/EndTriangleShape.svelte"
 
 	let mainDiv: HTMLDivElement
 	let featureGrid: HTMLDivElement
@@ -84,6 +79,7 @@
 		</div>
 		<CustomArgTypes />
 	</div>
+	<EndTriangleShape />
 </div>
 
 <style lang="scss">
