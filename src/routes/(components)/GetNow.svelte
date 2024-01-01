@@ -128,6 +128,7 @@
 		);
 		padding: 7rem;
 		padding-top: 15rem;
+		z-index: 1;
 		transition: 0.75s;
 
 		.content {
@@ -164,7 +165,7 @@
 
 	.anim-title {
 		position: absolute;
-		z-index: 1;
+		z-index: 2;
 		color: var(--color-secondary);
 		font-size: 3rem;
 		padding: 0.5rem 3rem;
