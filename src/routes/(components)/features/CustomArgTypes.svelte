@@ -7,9 +7,21 @@
 </script>
 
 <Feature title="Design your own Argument Types">
-	Effortlessly create your own sub-parsers that later will be used to parse
-	the values an argument receives. Lanat comes with many Argument Types
-	already made for you.
+	<div>
+		<p>
+			Effortlessly create your own sub-parsers that later will be used to
+			parse the values an argument receives. Lanat comes with many
+			Argument Types already made for you.
+		</p>
+		<p>
+			Heres's an example of how the Argument Types are used. In this case,
+			by using the
+			<code>EnumArgumentType</code> we can create an argument that takes an
+			enum value.
+		</p>
+	</div>
+
+	<h3>Creating the type</h3>
 
 	<div class="codes">
 		<Code
@@ -70,13 +82,11 @@ public class EnumArgumentType<T extends Enum<T>> extends ArgumentType<T> {
 `}
 		/>
 		<div class="result">
+			<h3>Using the type</h3>
 			<div class="result-info">
 				<div class="info">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Sapiente debitis minus repudiandae non reiciendis.
-					Accusantium ex facilis voluptatibus perspiciatis
-					praesentium! Repellendus unde ipsa debitis voluptas sint,
-					dolor illo excepturi eius!
+					Create an enum with the options you want to allow the user
+					to choose from.
 				</div>
 				<div class="code-wrapper">
 					<Code
@@ -84,7 +94,7 @@ public class EnumArgumentType<T extends Enum<T>> extends ArgumentType<T> {
 enum Options {
 	ACTIVATE,
 	DEACTIVATE,
-	TOGGLE
+	TOGGLE // this is the default value
 }
 `}
 					/>
@@ -93,11 +103,13 @@ enum Options {
 
 			<div class="result-info">
 				<div class="info">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Sapiente debitis minus repudiandae non reiciendis.
-					Accusantium ex facilis voluptatibus perspiciatis
-					praesentium! Repellendus unde ipsa debitis voluptas sint,
-					dolor illo excepturi eius!
+					<p>
+						Then, create an <code>EnumArgumentType</code>
+						with the default value we want to use specified in the constructor.
+					</p>
+					<p>
+						Once created, we can use it in an <code>Argument</code>.
+					</p>
 				</div>
 				<div class="code-wrapper">
 					<Code
@@ -105,18 +117,24 @@ enum Options {
 Argument.create(
 	new EnumArgumentType<>(Options.TOGGLE)
 	, "option"
-);`}
+);
+`}
 					/>
 				</div>
 			</div>
 
 			<div class="result-info">
 				<div class="info">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Sapiente debitis minus repudiandae non reiciendis.
-					Accusantium ex facilis voluptatibus perspiciatis
-					praesentium! Repellendus unde ipsa debitis voluptas sint,
-					dolor illo excepturi eius!
+					<p>
+						Finally, let Lanat take care of the rest! If the user
+						writes the name of the enum value, it will be parsed
+						correctly and you'll get the actual enum value as a
+						result once parsed.
+					</p>
+					<p>
+						Here's how the argument would look like in the help
+						message generated:
+					</p>
 				</div>
 				<div class="code-wrapper">
 					<Terminal>
@@ -178,7 +196,7 @@ Argument.create(
 	.result {
 		position: relative;
 		display: grid;
-		grid-template-rows: 1fr 1fr 1fr;
+		grid-template-rows: auto 1fr 1fr 1fr;
 		flex-direction: column;
 		gap: 1rem;
 		border-radius: var(--border-radius);
@@ -196,9 +214,8 @@ Argument.create(
 			.info {
 				flex-shrink: 1;
 				flex-basis: 50%;
-				display: grid;
-				place-items: center;
-				margin-inline: 2rem;
+				margin: 1rem 2rem;
+				align-self: center;
 			}
 
 			.code-wrapper {

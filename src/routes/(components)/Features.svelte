@@ -116,5 +116,10 @@
 				grid-template-columns: minmax(10rem, 1fr);
 			}
 		}
+
+		@include utils.if-tablet {
+			margin: 2rem;
+			margin-top: 5rem;
+		}
 	}
 </style>

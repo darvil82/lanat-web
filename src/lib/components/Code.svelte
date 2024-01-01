@@ -60,6 +60,7 @@
 			right: var(--scrollbar-size);
 			height: 3rem;
 			opacity: 0;
+			pointer-events: none;
 			transition: 0.5s;
 		}
 
