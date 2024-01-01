@@ -2,7 +2,8 @@
 	import type { CSSUnit } from "$lib/typedefs"
 	import { onMount } from "svelte"
 	import { Highlight } from "svelte-highlight"
-	import { java, type LanguageType } from "svelte-highlight/languages"
+	import type { LanguageType } from "svelte-highlight/languages/index"
+	import java from "svelte-highlight/languages/java"
 
 	export let code: string
 	export let language: LanguageType<string> = java
