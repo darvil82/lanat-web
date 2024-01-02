@@ -2,6 +2,8 @@
 	import type { CSSColor } from "$lib/typedefs"
 
 	export let title: string
+	export let glowTopPower = 1
+	export let glowRightPower = 1
 	export let glowTop: CSSColor = "transparent"
 	export let glowRight: CSSColor = "transparent"
 </script>
@@ -10,6 +12,8 @@
 	class="feature"
 	style:--shadow-top-base-color={glowTop}
 	style:--shadow-right-base-color={glowRight}
+	style:--light-power-top={glowTopPower}
+	style:--light-power-right={glowRightPower}
 >
 	<h2>{title}</h2>
 	<slot />
@@ -28,10 +32,13 @@
 		gap: 1rem;
 		min-height: 30rem;
 
-		--shadow-top: #{utils.with-opacity(var(--shadow-top-base-color), 0.2)};
+		--shadow-top: #{utils.with-opacity(
+				var(--shadow-top-base-color),
+				calc(0.2 * var(--light-power-top))
+			)};
 		--shadow-right: #{utils.with-opacity(
 				var(--shadow-right-base-color),
-				0.2
+				calc(0.2 * var(--light-power-right))
 			)};
 
 		$shadow-size: 8rem;
