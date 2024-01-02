@@ -115,8 +115,8 @@ enum Options {
 					<Code
 						code={`
 Argument.create(
-	new EnumArgumentType<>(Options.TOGGLE)
-	, "option"
+	new EnumArgumentType<>(Options.TOGGLE),
+	"option"
 );
 `}
 					/>
@@ -166,34 +166,35 @@ Argument.create(
 			grid-column: 1 / span 3;
 			grid-row: 1 / span 3;
 			max-height: 50rem;
-		}
 
-		:global(> :last-child) {
-			grid-column: 2 / span 3;
-			grid-row: 2 / span 2;
-			border: 0.25rem solid var(--color-accent-2);
-			box-shadow: -2rem -2rem 5rem rgba(0, 0, 0, 0.575);
-		}
-
-		@include utils.if-tablet {
-			grid-template-columns: 1fr;
-			grid-template-rows: 1fr 1fr 1fr;
-
-			:global(> :first-child) {
+			@include utils.if-tablet {
 				grid-column: 1;
 				grid-row: 1 / 4;
 				margin-inline: 1rem;
 			}
 
-			:global(> :last-child) {
-				grid-column: 1;
-				grid-row: 2 / 4;
-				box-shadow: 0 -2rem 5rem rgba(0, 0, 0, 0.575);
+			@include utils.if-mobile {
+				height: 30rem;
 			}
+		}
+
+		@include utils.if-tablet {
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr 1fr 1fr;
+		}
+
+		@include utils.if-mobile {
+			display: flex;
+			flex-direction: column;
 		}
 	}
 
 	.result {
+		grid-column: 2 / span 3;
+		grid-row: 2 / span 2;
+		border: 0.25rem solid var(--color-accent-2);
+		box-shadow: -2rem -2rem 5rem rgba(0, 0, 0, 0.575);
+
 		position: relative;
 		display: grid;
 		grid-template-rows: auto 1fr 1fr 1fr;
@@ -206,7 +207,7 @@ Argument.create(
 
 		.result-info {
 			display: grid;
-			grid-template-columns: 1fr minmax(20rem, 1fr);
+			grid-template-columns: 1fr minmax(10rem, 1fr);
 			gap: 2rem;
 			background-color: rgba(0, 0, 0, 0.295);
 			border-radius: var(--border-radius);
@@ -223,11 +224,35 @@ Argument.create(
 			}
 
 			@include utils.if-tablet {
-				grid-template-columns: 1fr;
+				grid-template-columns: minmax(10rem, 1fr);
 				grid-template-rows: 1fr 1fr;
 				gap: 1rem;
 				margin: 0;
 				padding: 1rem;
+			}
+
+			@include utils.if-mobile {
+				.info {
+					margin: 0;
+				}
+			}
+		}
+
+		@include utils.if-tablet {
+			grid-column: 1;
+			grid-row: 2 / 4;
+			box-shadow: 0 -2rem 5rem rgba(0, 0, 0, 0.575);
+		}
+
+		@include utils.if-mobile {
+			display: flex;
+			flex-direction: column;
+			margin-top: -5rem;
+			padding: 1rem;
+
+			.result-info {
+				display: flex;
+				flex-direction: column;
 			}
 		}
 	}

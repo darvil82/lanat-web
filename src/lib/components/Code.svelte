@@ -23,6 +23,8 @@
 	onMount(updateOverflowing)
 </script>
 
+<svelte:window on:resize={updateOverflowing} />
+
 <div
 	class="code-wrapper"
 	class:bottom-overflowing={bottomOverflowing}
