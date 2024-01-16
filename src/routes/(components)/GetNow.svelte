@@ -104,7 +104,7 @@
 						Github
 					</IconLink>
 					<IconLink
-						href="https://github.com/DarviL82/Lanat?tab=readme-ov-file#installation"
+						href="https://darvil82.github.io/lanat-docs/acquire-lanat.html"
 						icon={faJava}
 					>
 						Maven
