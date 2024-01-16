@@ -60,8 +60,6 @@
 			})
 	}
 
-	let time = 0
-
 	onMount(() => {
 		setZIndices()
 		updateFeaturesGlow()
