@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onDestroy, onMount } from "svelte"
+	import { onMount } from "svelte"
 	import PrettyTitle from "./PrettyTitle.svelte"
 	import { isTablet } from "$lib/scripts/utils"
 	import ReadableErrors from "./features/ReadableErrors.svelte"
@@ -7,7 +7,6 @@
 	import RichFormatting from "./features/RichFormatting.svelte"
 	import CustomArgTypes from "./features/CustomArgTypes.svelte"
 	import EndTriangleShape from "./features/EndTriangleShape.svelte"
-	import { cos } from "svelte-highlight/languages/index"
 
 	let mainDiv: HTMLDivElement
 	let featureGrid: HTMLDivElement
@@ -63,42 +62,9 @@
 
 	let time = 0
 
-	function updateLightOpacity() {
-		const newOpacity = Math.abs(
-			(Math.random() * 0.2 + 0.9) *
-				Math.max(Math.abs(Math.sin(time)), 0.5)
-		)
-		currentLightOpacity = newOpacity
-
-		featureGrid
-			.querySelectorAll<HTMLDivElement>(".feature")
-			.forEach(feature => {
-				const posY = feature.offsetTop - featureGrid.offsetTop
-
-				if (posY != 0) return
-
-				feature.style.setProperty(
-					"--light-power-top",
-					newOpacity.toString()
-				)
-			})
-
-		const firstFeature =
-			mainFeaturesContainer.querySelector<HTMLDivElement>(".feature")!
-
-		firstFeature.style.setProperty(
-			"--light-power-right",
-			newOpacity.toString()
-		)
-
-		time += (Math.random() * Math.cos(time)) / 100
-		requestAnimationFrame(updateLightOpacity)
-	}
-
 	onMount(() => {
 		setZIndices()
 		updateFeaturesGlow()
-		updateLightOpacity()
 	})
 </script>
 
