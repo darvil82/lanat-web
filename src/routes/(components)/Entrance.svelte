@@ -25,13 +25,13 @@
 			code={`
 @Command.Define
 class MyProgram {
-	@Argument.Define(required = true, positional = true, description = "The name of the user.")
+	@Argument.Define(required = true, positional = true)
 	public String name;
 
-	@Argument.Define(argType = StringArgumentType.class, description = "The surname of the user.")
+	@Argument.Define(argType = StringArgumentType.class)
 	public Optional<String> surname;
 
-	@Argument.Define(names = {"age", "a"}, description = "The age of the user.", prefix = '+')
+	@Argument.Define(names = {"age", "a"}, prefix = '+')
 	public int age = 18;
 }
 `}
