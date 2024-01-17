@@ -45,7 +45,7 @@ class MyProgram {
 			title="Put the stuff together"
 			code={`
 public static void main(String[] args) {
-    var myProgram = ArgumentParser.parseFromInto(MyProgram.class, CLInput.from(args));
+    var myProgram = ArgumentParser.parseFromInto(MyProgram.class, args);
 
     System.out.printf(
         "Welcome %s! You are %d years old.%n",
