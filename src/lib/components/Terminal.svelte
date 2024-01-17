@@ -1,4 +1,10 @@
-<div class="code-wrapper">
+<script lang="ts">
+	import type { CSSUnit } from "$lib/typedefs"
+
+	export let fontSize: CSSUnit = "0.85rem"
+</script>
+
+<div class="code-wrapper" style:font-size={`max(.85rem, ${fontSize})`}>
 	<slot />
 </div>
 
@@ -7,7 +13,6 @@
 		background-color: var(--color-black);
 		height: 100%;
 		padding: 1rem;
-		font-size: 0.85rem;
 		border-radius: var(--border-radius);
 		font-family: "Jetbrains Mono";
 

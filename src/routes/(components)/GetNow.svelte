@@ -79,6 +79,7 @@
 		class="get-now"
 		in:fly={{ duration: 1000, y: -getNowContainerHeight, opacity: 1 }}
 		out:fly={{ duration: 500, y: 200 }}
+		class:animate={animateTitle}
 	>
 		<div
 			class="close-btn"
@@ -124,12 +125,19 @@
 		background: linear-gradient(
 			45deg,
 			var(--color-accent-1),
-			var(--color-accent-2)
+			var(--color-accent-2),
+			var(--color-accent-1),
+			var(--color-accent-3)
 		);
+		background-size: 500%;
+		background-position-x: 0%;
 		padding: 7rem;
 		padding-top: 15rem;
 		z-index: 1;
-		transition: 0.75s;
+
+		transition:
+			all 0.75s,
+			background-position-x 1.5s ease-out;
 
 		.content {
 			color: var(--color-secondary);
@@ -161,6 +169,10 @@
 			padding: 2rem;
 			padding-top: 10rem;
 		}
+
+		&.animate {
+			background-position-x: 70%;
+		}
 	}
 
 	.anim-title {
@@ -171,6 +183,7 @@
 		padding: 0.5rem 3rem;
 		font-weight: 900;
 		text-align: center;
+		pointer-events: none;
 
 		&.animate {
 			transition: 0.75s;

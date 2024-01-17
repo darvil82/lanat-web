@@ -29,7 +29,7 @@
 	class="code-wrapper"
 	class:bottom-overflowing={bottomOverflowing}
 	class:top-overflowing={topOverflowing}
-	style:font-size={fontSize}
+	style:font-size={`max(.85rem, ${fontSize})`}
 >
 	<div
 		bind:this={codeWrapper}

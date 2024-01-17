@@ -13,6 +13,7 @@
 
 	<div class="wrapper">
 		<Code
+			fontSize=".7vw"
 			code={`
 command.setDescription(
 	"<color=cyan>Hello <format=b,i>world!<format=reset> "
@@ -24,7 +25,7 @@ command.setDescription(
 			<Fa icon={faDownLong} scale="4" color="var(--color-accent-1)" />
 		</div>
 
-		<Terminal>
+		<Terminal fontSize=".9vw">
 			<aqua>Hello <b><i>world!</i></b></aqua>
 			<u>Here's some more <purple highlight>text</purple>.</u>
 		</Terminal>
