@@ -5,7 +5,7 @@
 </script>
 
 <slot />
-<Footer></Footer>
+<Footer />
 
 <style lang="scss">
 	:global(.hljs) {

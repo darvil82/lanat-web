@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Entrance from "./(components)/Entrance.svelte"
 	import Features from "./(components)/Features.svelte"
-	import GetStarted from "./(components)/GetStarted.svelte"
+	import GetStarted from "./(components)/getStarted/GetStarted.svelte"
 
 	let features: Features
 </script>
@@ -11,7 +11,7 @@
 
 	<Features bind:this={features} />
 
-	<GetStarted></GetStarted>
+	<GetStarted />
 </main>
 
 <style lang="scss">

@@ -1,3 +1,5 @@
+import { browser } from "$app/environment"
+
 export const WIDTH_TABLET = 1024
 export const WIDTH_MOBILE = 768
 
@@ -6,9 +8,9 @@ export function setScrollingEnabled(state: boolean) {
 }
 
 export function isMobile() {
-	return window.innerWidth < WIDTH_MOBILE
+	return browser && window.innerWidth < WIDTH_MOBILE
 }
 
 export function isTablet() {
-	return window.innerWidth < WIDTH_TABLET
+	return browser && window.innerWidth < WIDTH_TABLET
 }

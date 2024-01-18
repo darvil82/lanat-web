@@ -1,10 +1,11 @@
 <script lang="ts">
-	import Triangle from "./getStarted/Triangle.svelte"
+	import Triangle from "./Triangle.svelte"
 	import KeepCentered from "$lib/components/KeepCentered.svelte"
 	import Terminal from "$lib/components/Terminal.svelte"
 	import { onMount } from "svelte"
 	import { getLatestVersion } from "$lib/scripts/live"
-	import LetsBegin from "./getStarted/LetsBegin.svelte"
+	import LetsBegin from "./LetsBegin.svelte"
+	import { isTablet } from "$lib/scripts/utils"
 
 	let version: string = "+"
 
@@ -14,7 +15,7 @@
 </script>
 
 <div class="main-container">
-	<Triangle color="var(--color-accent-2)"></Triangle>
+	<Triangle color="var(--color-accent-2)" />
 	<div class="get-started-container">
 		<KeepCentered>
 			<div class="get-started-content">
@@ -37,8 +38,8 @@
 		</KeepCentered>
 	</div>
 	<div class="lets-begin">
-		<div class="arrow"></div>
-		<LetsBegin></LetsBegin>
+		<div class="arrow" />
+		<LetsBegin />
 	</div>
 </div>
 
