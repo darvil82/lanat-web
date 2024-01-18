@@ -1,5 +1,5 @@
 <script>
-	import Button from "$lib/components/Button.svelte"
+	import LinkButton from "$lib/components/LinkButton.svelte"
 </script>
 
 <div class="lets-begin">
@@ -9,7 +9,11 @@
 		includes a full tutorial on how to get started with the basics of Lanat
 		(and the not so-basic stuff!)
 	</p>
-	<Button>Documentation</Button>
+	<LinkButton
+		href="https://darvil82.github.io/lanat-docs/discover-lanat.html"
+	>
+		Documentation
+	</LinkButton>
 </div>
 
 <style lang="scss">

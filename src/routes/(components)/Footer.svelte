@@ -19,7 +19,8 @@
 <style lang="scss">
 	footer {
 		background-color: var(--color-secondary);
-		padding: 4rem;
+		padding-top: 4rem;
+		padding-bottom: 10rem;
 		margin-top: 20rem;
 
 		.content {
