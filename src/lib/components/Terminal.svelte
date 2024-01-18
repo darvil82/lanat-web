@@ -11,6 +11,7 @@
 <style lang="scss">
 	.code-wrapper {
 		background-color: var(--color-black);
+		color: var(--color-text-over-dark);
 		height: 100%;
 		padding: 1rem;
 		border-radius: var(--border-radius);

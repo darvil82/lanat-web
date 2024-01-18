@@ -3,13 +3,13 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap");
 
 :root {
-	--color-primary: #19191b;
+	--color-primary: #1c1c1f;
 	--color-secondary: #2c2d32;
 	--color-tertiary: #888895;
 	--color-tertiary-light: #e7e7e7;
 	--color-black: #101011;
 
-	--color-accent-1: #9599ee;
+	--color-accent-1: #d2a8ff;
 	--color-accent-2: #70ddc9;
 	--color-accent-3: #fcff7e;
 
@@ -54,11 +54,11 @@ h1,
 h2,
 h3 {
 	line-height: 1;
+	font-weight: 900;
 }
 
 h1 {
 	font-size: 8rem;
-	font-weight: 900;
 
 	@include utils.if-mobile() {
 		font-size: min(6rem, 15vw);

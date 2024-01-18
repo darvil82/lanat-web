@@ -99,16 +99,16 @@
 				<h3>Get it on</h3>
 				<div class="links">
 					<IconLink
-						href="https://github.com/DarviL82/Lanat/packages/"
-						icon={faGithub}
-					>
-						Github
-					</IconLink>
-					<IconLink
 						href="https://darvil82.github.io/lanat-docs/acquire-lanat.html"
 						icon={faJava}
 					>
 						Maven
+					</IconLink>
+					<IconLink
+						href="https://github.com/DarviL82/Lanat/packages/"
+						icon={faGithub}
+					>
+						Github
 					</IconLink>
 				</div>
 			</div>
@@ -134,6 +134,7 @@
 		padding: 7rem;
 		padding-top: 15rem;
 		z-index: 1;
+		box-shadow: utils.$clay-shadow;
 
 		transition:
 			all 0.75s,

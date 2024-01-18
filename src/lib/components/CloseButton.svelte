@@ -15,10 +15,15 @@
 		background-color: var(--color-text-over-light);
 		padding: 1rem 2rem;
 		font-weight: bold;
+		box-shadow: 0 0.8rem 1rem -0.8rem rgba(0 0 0 / 0.3);
 		transition: 0.15s;
 
 		&:hover {
-			background-color: var(--color-text-over-dark);
+			background: linear-gradient(
+				to top,
+				var(--color-text-over-dark) 60%,
+				transparent
+			);
 			color: var(--color-text-over-light);
 		}
 

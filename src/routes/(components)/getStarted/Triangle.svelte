@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { CSSColor } from "$lib/typedefs"
+	import { onMount } from "svelte"
 
 	export let color: CSSColor
 
@@ -14,9 +15,11 @@
 
 		angle = ANGLE * -(top / window.innerHeight)
 	}
+
+	onMount(updateAngle)
 </script>
 
-<svelte:window on:scroll={updateAngle} />
+<svelte:window on:scroll={updateAngle} on:resize={updateAngle} />
 
 <div class="svg-container" style:rotate={`${angle}deg`} bind:this={trig}>
 	<svg viewBox="0 0 196 196">
