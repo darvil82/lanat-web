@@ -2,16 +2,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap");
 
+$initial-accent-1: #d2a8ff;
+$initial-accent-2: #70ddc9;
+$initial-accent-3: #fcff7e;
+
 :root {
 	--color-primary: #1c1c1f;
 	--color-secondary: #2c2d32;
 	--color-tertiary: #888895;
 	--color-tertiary-light: #e7e7e7;
 	--color-black: #101011;
-
-	--color-accent-1: #d2a8ff;
-	--color-accent-2: #70ddc9;
-	--color-accent-3: #fcff7e;
+	--color-accent-1: #{$initial-accent-1};
+	--color-accent-2: #{$initial-accent-2};
+	--color-accent-3: #{$initial-accent-3};
 
 	--color-text-over-dark: var(--color-tertiary-light);
 	--color-text-over-light: var(--color-primary);
@@ -20,7 +23,19 @@
 
 	--default-font: "Roboto", sans-serif;
 
-	--scrollbar-size: 0.5rem;
+	--scrollbar-size: 0.5vw;
+}
+
+.accent-theme-2 {
+	--color-accent-1: #{$initial-accent-2};
+	--color-accent-2: #{$initial-accent-3};
+	--color-accent-3: #{$initial-accent-1};
+}
+
+.accent-theme-3 {
+	--color-accent-1: #{$initial-accent-3};
+	--color-accent-2: #{$initial-accent-1};
+	--color-accent-3: #{$initial-accent-2};
 }
 
 *,

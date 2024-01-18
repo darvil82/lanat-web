@@ -1,11 +1,14 @@
 <script>
+	import { accentTheme } from "$lib/scripts/utils"
 	import Footer from "./(components)/Footer.svelte"
 	import "./app.scss"
 	import "svelte-highlight/styles/github-dark.css"
 </script>
 
-<slot />
-<Footer />
+<div class="main-wrapper accent-theme-{$accentTheme}">
+	<slot />
+	<Footer />
+</div>
 
 <style lang="scss">
 	:global(.hljs) {

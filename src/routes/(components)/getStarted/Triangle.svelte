@@ -13,7 +13,7 @@
 
 		if (window.innerHeight < top) return
 
-		angle = ANGLE * -(top / window.innerHeight)
+		angle = Math.min(ANGLE * -(top / window.innerHeight), ANGLE * 2)
 	}
 
 	onMount(updateAngle)
@@ -33,7 +33,7 @@
 
 <style lang="scss">
 	.svg-container {
-		width: max(65vw, 65vh);
+		width: 70vw;
 		aspect-ratio: 1;
 		filter: drop-shadow(0 4rem 1rem rgba(0, 0, 0, 0.2));
 	}

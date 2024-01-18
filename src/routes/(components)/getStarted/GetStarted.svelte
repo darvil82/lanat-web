@@ -44,7 +44,7 @@
 
 <style lang="scss">
 	.main-container {
-		margin-top: calc(max(65vw, 65vh) * -0.5);
+		margin-top: calc(70vw * -0.6);
 	}
 
 	.get-started-container {

@@ -2,12 +2,15 @@
 	import Image from "$lib/components/Image.svelte"
 	import logo_white from "$lib/images/logo/logo_white.png"
 	import KeepCentered from "$lib/components/KeepCentered.svelte"
+	import { accentTheme } from "$lib/scripts/utils"
 </script>
 
 <footer>
 	<KeepCentered>
 		<div class="content">
-			<Image src={logo_white} alt="Logo" maxWidth={"15rem"} />
+			<button on:click={accentTheme.next}>
+				<Image src={logo_white} alt="Logo" maxWidth={"15rem"} />
+			</button>
 			<div class="credits">
 				<span class="lowlight">Created by</span>
 				David Losantos
