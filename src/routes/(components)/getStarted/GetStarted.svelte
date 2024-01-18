@@ -5,7 +5,6 @@
 	import { onMount } from "svelte"
 	import { getLatestVersion } from "$lib/scripts/live"
 	import LetsBegin from "./LetsBegin.svelte"
-	import { isTablet } from "$lib/scripts/utils"
 
 	let version: string = "+"
 
@@ -77,19 +76,19 @@
 		display: flex;
 		flex-direction: column;
 		gap: 3rem;
-	}
 
-	.step {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		padding: 2.5rem 3rem;
-		background-color: rgba(0 0 0 / 0.1);
-		border-radius: calc(var(--border-radius) / 2);
+		.step {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			padding: 2.5rem 3rem;
+			background-color: rgba(0 0 0 / 0.1);
+			border-radius: calc(var(--border-radius) / 2);
 
-		&.highlight {
-			background-color: var(--color-accent-1);
-			box-shadow: 0 0 2rem 0 rgba(0 0 0 / 0.3);
+			&.highlight {
+				background-color: var(--color-accent-1);
+				box-shadow: 0 0 2rem 0 rgba(0 0 0 / 0.3);
+			}
 		}
 	}
 
@@ -98,25 +97,25 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-	}
 
-	.arrow {
-		width: 1rem;
-		height: 30rem;
-		background-color: var(--color-accent-3);
-		position: relative;
-
-		&::after {
-			content: "";
-			position: absolute;
-			bottom: 0;
-			left: 50%;
-			translate: -50% 50%;
-			width: 3rem;
-			aspect-ratio: 1;
-			border-radius: 50%;
+		.arrow {
+			width: 1rem;
+			height: 30rem;
 			background-color: var(--color-accent-3);
-			z-index: 1;
+			position: relative;
+
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				translate: -50% 50%;
+				width: 3rem;
+				aspect-ratio: 1;
+				border-radius: 50%;
+				background-color: var(--color-accent-3);
+				z-index: 1;
+			}
 		}
 	}
 </style>
