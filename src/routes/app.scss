@@ -12,9 +12,9 @@ $initial-accent-3: #fcff7e;
 	--color-tertiary: #888895;
 	--color-tertiary-light: #e7e7e7;
 	--color-black: #101011;
-	--color-accent-1: #{$initial-accent-1};
-	--color-accent-2: #{$initial-accent-2};
-	--color-accent-3: #{$initial-accent-3};
+	--color-accent-1: var(--color-tertiary-light);
+	--color-accent-2: var(--color-secondary);
+	--color-accent-3: var(--color-tertiary);
 
 	--color-text-over-dark: var(--color-tertiary-light);
 	--color-text-over-light: var(--color-primary);
@@ -24,6 +24,12 @@ $initial-accent-3: #fcff7e;
 	--default-font: "Roboto", sans-serif;
 
 	--scrollbar-size: 0.5vw;
+}
+
+.accent-theme-1 {
+	--color-accent-1: #{$initial-accent-1};
+	--color-accent-2: #{$initial-accent-2};
+	--color-accent-3: #{$initial-accent-3};
 }
 
 .accent-theme-2 {

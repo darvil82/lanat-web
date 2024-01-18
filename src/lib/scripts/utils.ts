@@ -1,18 +1,18 @@
 import { browser } from "$app/environment"
-import { get, writable } from "svelte/store"
+import { writable } from "svelte/store"
 
 export const WIDTH_TABLET = 1024
 export const WIDTH_MOBILE = 768
+const NUM_ACCENT_THEMES = 3
 
 export const accentTheme = (function () {
-	const { subscribe, set } = writable(1)
+	const { subscribe, update } = writable(0)
 
-	const store = {
+	return {
 		subscribe,
-		next: () => set((get(store) % 3) + 1),
+		next: () => update(n => (n % NUM_ACCENT_THEMES) + 1),
+		set: (n: number) => update(() => (n % NUM_ACCENT_THEMES) + 1),
 	}
-
-	return store
 })()
 
 export function setScrollingEnabled(state: boolean) {

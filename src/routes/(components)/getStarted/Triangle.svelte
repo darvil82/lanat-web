@@ -7,6 +7,7 @@
 	const ANGLE = 15
 	let angle: number
 	let trig: HTMLDivElement
+	let show = false
 
 	function updateAngle() {
 		const top = trig.getBoundingClientRect().top
@@ -16,12 +17,20 @@
 		angle = Math.min(ANGLE * -(top / window.innerHeight), ANGLE * 2)
 	}
 
-	onMount(updateAngle)
+	onMount(() => {
+		show = true
+		updateAngle()
+	})
 </script>
 
 <svelte:window on:scroll={updateAngle} on:resize={updateAngle} />
 
-<div class="svg-container" style:rotate={`${angle}deg`} bind:this={trig}>
+<div
+	class="svg-container"
+	class:show
+	style:rotate={`${angle}deg`}
+	bind:this={trig}
+>
 	<svg viewBox="0 0 196 196">
 		<path
 			stroke="none"
@@ -36,5 +45,10 @@
 		width: 70vw;
 		aspect-ratio: 1;
 		filter: drop-shadow(0 4rem 1rem rgba(0, 0, 0, 0.2));
+		transition: opacity 0.25s;
+
+		&:not(.show) {
+			opacity: 0;
+		}
 	}
 </style>
