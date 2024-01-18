@@ -50,15 +50,17 @@
 
 		&:not(.primary) {
 			background-color: utils.with-opacity(var(--color-primary), 0.5);
-			color: var(--color-tertiary);
 			outline: currentColor solid 0.15rem;
 			font-size: 1.5em;
-			transition: 0.25s;
+			color: var(--color-tertiary-light);
+			box-shadow: 0 0 2rem 0
+				utils.with-opacity(var(--color-tertiary-light), 0.25);
+			transition: 0.15s;
 
 			&:hover {
-				color: var(--color-tertiary-light);
-				box-shadow: 0 0 2rem 0
-					utils.with-opacity(var(--color-tertiary-light), 0.25);
+				outline-width: 0.25rem;
+				box-shadow: 0 2rem 3rem 0
+					utils.with-opacity(var(--color-primary), 0.5);
 			}
 
 			&:active {
@@ -68,8 +70,9 @@
 					0.6
 				);
 				color: var(--color-primary);
+				outline-width: 0.25rem;
 				box-shadow: 0 0 2rem 0
-					utils.with-opacity(var(--color-tertiary-light), 0.5);
+					utils.with-opacity(var(--color-tertiary-light), 1);
 			}
 		}
 	}
