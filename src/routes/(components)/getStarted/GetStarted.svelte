@@ -118,7 +118,7 @@
 
 		.arrow {
 			width: 1rem;
-			height: min(max(40vh, 20rem), 50rem);
+			height: min(max(50vh, 20rem), 50rem);
 			background-color: var(--color-accent-3);
 			position: relative;
 
