@@ -1,9 +1,22 @@
-<script>
+<script lang="ts">
 	import Image from "$lib/components/Image.svelte"
 	import logo from "$lib/images/logo.png"
 	import KeepCentered from "$lib/components/KeepCentered.svelte"
 	import { accentTheme } from "$lib/scripts/utils"
 	import TextLink from "$lib/components/TextLink.svelte"
+	import { onMount } from "svelte"
+
+	let showName = false
+
+	const toggleName = (up: boolean) => (e: KeyboardEvent) => {
+		if (e.key === "Shift") showName = up
+	}
+
+	// showname when holding shift
+	onMount(() => {
+		window.addEventListener("keydown", toggleName(true))
+		window.addEventListener("keyup", toggleName(false))
+	})
 </script>
 
 <footer>
@@ -15,10 +28,12 @@
 				</button>
 				<div class="credits">
 					<span class="lowlight">Created by</span>
-					David Losantos
+					<TextLink href="https://github.com/darvil82">
+						{showName ? "David Losantos" : "darvil82"}
+					</TextLink>
 				</div>
 			</div>
-			<div class="extra">
+			<div class="extra lowlight">
 				<p>
 					Source code of this site can be found
 					<TextLink href="https://github.com/darvil82/lanat-web">
@@ -53,12 +68,11 @@
 		}
 
 		.extra {
-			color: var(--color-tertiary);
 			margin-top: 1rem;
 			font-size: 1rem;
 		}
 
-		.credits .lowlight {
+		.lowlight {
 			color: var(--color-tertiary);
 		}
 	}
