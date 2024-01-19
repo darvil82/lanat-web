@@ -197,7 +197,7 @@
 
 		&.animate {
 			transition: all 0.75s;
-			font-size: 7rem;
+			font-size: min(7rem, 10vw);
 			padding: 0;
 			text-align: left;
 			width: 100% !important; // to quickly override the width set with ts

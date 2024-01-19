@@ -4,6 +4,7 @@
 	padding: 0.5rem min(3rem, 10vw);
 	font-weight: 900;
 	border-radius: 10px;
+	text-align: center;
 
 	&.primary {
 		$glow-blur: 3rem;
@@ -53,7 +54,7 @@
 			utils.with-opacity(var(--color-tertiary-light), 0.25);
 		transition:
 			all 0.15s,
-			font-size 0;
+			font-size 0s;
 
 		&:hover {
 			outline-width: 0.25rem;

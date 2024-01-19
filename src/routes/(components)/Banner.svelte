@@ -18,9 +18,7 @@
 		high customization possibilities in mind.
 	</p>
 	<div class="buttons">
-		<div class="getbutton">
-			<Button primary on:click={showGetNow}>Get it now</Button>
-		</div>
+		<Button primary on:click={showGetNow}>Get it now</Button>
 		<Button on:click={() => dispatch("clicklearnmore")}>Learn more</Button>
 	</div>
 </div>

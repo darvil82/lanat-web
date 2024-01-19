@@ -11,6 +11,3 @@
 >
 	<slot />
 </a>
-
-<style lang="scss">
-</style>
