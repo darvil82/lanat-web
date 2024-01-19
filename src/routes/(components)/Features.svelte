@@ -123,13 +123,20 @@
 	}
 
 	.title-more {
-		text-align: center;
+		text-align: right;
 		color: var(--color-accent-2);
 		filter: drop-shadow(0 2rem 3rem utils.with-opacity(currentColor, 0.5))
 			brightness(var(--brightness, 1));
 		z-index: 1;
+		padding-right: 20vw;
+		margin-top: -5rem;
 
-		@media (min-width: 450px) and (max-width: 1970px) {
+		@include utils.if-tablet() {
+			padding-right: 0;
+			text-align: center;
+		}
+
+		@media (min-width: 450px) and (max-width: 1645px) {
 			mix-blend-mode: difference;
 			--brightness: 1.15;
 		}
