@@ -28,7 +28,7 @@ class MyProgram {
 	@Argument.Define(required = true, positional = true)
 	public String name;
 
-	@Argument.Define(argType = StringArgumentType.class)
+	@Argument.Define(type = StringArgumentType.class)
 	public Optional<String> surname;
 
 	@Argument.Define(names = {"age", "a"}, prefix = '+')
