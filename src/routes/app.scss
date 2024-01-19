@@ -81,7 +81,7 @@ h3 {
 h1 {
 	font-size: 8rem;
 
-	@include utils.if-mobile() {
+	@include utils.if-tablet() {
 		font-size: min(6rem, 15vw);
 	}
 }
@@ -89,7 +89,7 @@ h1 {
 h2 {
 	font-size: 3.5em;
 
-	@include utils.if-mobile() {
+	@include utils.if-tablet() {
 		font-size: min(3rem, 10vw);
 	}
 }
@@ -97,8 +97,8 @@ h2 {
 h3 {
 	font-size: 2rem;
 
-	@include utils.if-mobile() {
-		font-size: min(1.5rem, 5vw);
+	@include utils.if-tablet() {
+		font-size: min(1.5rem, 7vw);
 	}
 }
 
@@ -107,8 +107,9 @@ code {
 	tab-size: 4;
 }
 
-.monospace-font-sizeable {
+.monospaced {
 	font-size: min(max(0.85rem, var(--f-size)), 1.1rem) !important;
+	word-wrap: break-word;
 }
 
 a {

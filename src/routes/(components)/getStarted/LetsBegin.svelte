@@ -59,5 +59,10 @@
 			min-width: unset;
 			width: 90vw;
 		}
+
+		@include utils.if-mobile {
+			padding: 1.5rem;
+			align-items: stretch;
+		}
 	}
 </style>

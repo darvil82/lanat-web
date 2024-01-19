@@ -32,9 +32,14 @@
 		aspect-ratio: 1;
 		width: 15rem;
 
-		@include utils.if-mobile {
+		@include utils.if-tablet {
 			width: 12rem;
 			font-size: 1.5rem;
+		}
+
+		@include utils.if-mobile {
+			width: 7.5rem;
+			font-size: 1rem;
 		}
 
 		&:hover {

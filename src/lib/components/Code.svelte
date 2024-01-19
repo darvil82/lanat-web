@@ -26,7 +26,7 @@
 <svelte:window on:resize={updateOverflowing} />
 
 <div
-	class="code-wrapper monospace-font-sizeable"
+	class="code-wrapper monospaced"
 	class:bottom-overflowing={bottomOverflowing}
 	class:top-overflowing={topOverflowing}
 	style:--f-size={fontSize}

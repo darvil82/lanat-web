@@ -2,7 +2,7 @@ import { browser } from "$app/environment"
 import { writable } from "svelte/store"
 
 export const WIDTH_TABLET = 1024
-export const WIDTH_MOBILE = 768
+export const WIDTH_MOBILE = 576
 const NUM_ACCENT_THEMES = 3
 
 export const accentTheme = (function () {

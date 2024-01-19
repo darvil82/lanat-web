@@ -1,7 +1,7 @@
 @use "$lib/utils.scss";
 
 .button {
-	padding: 0.5rem 3rem;
+	padding: 0.5rem min(3rem, 10vw);
 	font-weight: 900;
 	border-radius: 10px;
 
@@ -16,13 +16,18 @@
 		);
 		background-size: 200%;
 		color: var(--color-secondary);
-		font-size: 3rem;
-		box-shadow: 0 1rem $glow-blur 0
+		font-size: min(3rem, 10vw);
+		box-shadow:
+			0 1rem $glow-blur 0
 				utils.with-opacity(var(--color-accent-1), $glow-opacity),
 			0 -1rem $glow-blur 0 utils.with-opacity(var(--color-accent-2), $glow-opacity);
 		outline: var(--color-accent-2) solid 0;
-		transition: outline-width 0.15s, outline-offset 0.15s, box-shadow 0.25s,
-			background-position 0.5s, border-radius 0.25s;
+		transition:
+			outline-width 0.15s,
+			outline-offset 0.15s,
+			box-shadow 0.25s,
+			background-position 0.5s,
+			border-radius 0.25s;
 
 		&:hover {
 			outline-width: 0.25rem;
@@ -42,11 +47,13 @@
 	&:not(.primary) {
 		background-color: utils.with-opacity(var(--color-primary), 0.5);
 		outline: currentColor solid 0.15rem;
-		font-size: 1.5em;
+		font-size: min(1.5em, 7vw);
 		color: var(--color-tertiary-light);
 		box-shadow: 0 0 2rem 0
 			utils.with-opacity(var(--color-tertiary-light), 0.25);
-		transition: 0.15s;
+		transition:
+			all 0.15s,
+			font-size 0;
 
 		&:hover {
 			outline-width: 0.25rem;

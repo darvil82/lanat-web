@@ -156,6 +156,10 @@
 				display: flex;
 				flex-wrap: wrap;
 				gap: 2rem;
+
+				@include utils.if-mobile {
+					gap: 1rem;
+				}
 			}
 		}
 
@@ -171,6 +175,11 @@
 			padding-top: 10rem;
 		}
 
+		@include utils.if-mobile {
+			padding: 1rem;
+			padding-top: 9rem;
+		}
+
 		&.animate {
 			background-position-x: 70%;
 		}
@@ -180,14 +189,14 @@
 		position: absolute;
 		z-index: 2;
 		color: var(--color-secondary);
-		font-size: 3rem;
+		font-size: min(3rem, 10vw);
 		padding: 0.5rem 3rem;
 		font-weight: 900;
 		text-align: center;
 		pointer-events: none;
 
 		&.animate {
-			transition: 0.75s;
+			transition: all 0.75s;
 			font-size: 7rem;
 			padding: 0;
 			text-align: left;
@@ -201,6 +210,13 @@
 				// we change this here so that if the window is resized, the title moves with it
 				translate: -4.75rem -2rem;
 				font-size: 5rem;
+			}
+		}
+
+		@include utils.if-mobile {
+			&.animate {
+				font-size: 3.5rem;
+				translate: -5.75rem -1rem;
 			}
 		}
 	}
