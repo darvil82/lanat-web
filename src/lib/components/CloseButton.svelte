@@ -22,7 +22,7 @@
 			background: linear-gradient(
 				to top,
 				var(--color-text-over-dark) 60%,
-				utils.with-opacity(var(--color-text-over-dark), 0.2)
+				utils.with-opacity(var(--color-text-over-dark), 0.5)
 			);
 			color: var(--color-text-over-light);
 		}
