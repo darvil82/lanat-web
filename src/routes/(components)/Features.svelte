@@ -81,6 +81,7 @@
 		<CustomArgTypes />
 	</div>
 	<EndTriangleShape />
+	<h2 class="title-more">And much more!</h2>
 </div>
 
 <style lang="scss">
@@ -118,5 +119,10 @@
 			margin: 2rem;
 			margin-top: 5rem;
 		}
+	}
+
+	.title-more {
+		text-align: center;
+		filter: drop-shadow(0 2rem 3rem utils.with-opacity(currentColor, 0.5));
 	}
 </style>

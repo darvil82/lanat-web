@@ -53,5 +53,11 @@
 			z-index: -1;
 			filter: blur(3rem);
 		}
+
+		@include utils.if-tablet {
+			padding: 2rem;
+			min-width: unset;
+			width: 90vw;
+		}
 	}
 </style>

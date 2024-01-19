@@ -5,11 +5,18 @@
 </div>
 
 <style lang="scss">
+	@use "$lib/utils.scss";
+
 	.keep-centered {
+		--margin: 5rem;
 		display: grid;
 		grid-template-columns:
-			minmax(5rem, 1fr)
-			minmax(200px, 1100px) minmax(5rem, 1fr);
+			minmax(var(--margin), 1fr)
+			minmax(200px, 1100px) minmax(var(--margin), 1fr);
+
+		@include utils.if-mobile {
+			--margin: 2rem;
+		}
 
 		.content {
 			grid-column: 2;

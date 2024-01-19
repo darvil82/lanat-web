@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button from "$lib/components/Button.svelte"
 	import Image from "$lib/components/Image.svelte"
-	import logo_white from "$lib/images/logo/logo_white.png"
+	import logo from "$lib/images/logo.png"
 	import { createEventDispatcher } from "svelte"
 
 	let dispatch = createEventDispatcher()
@@ -12,7 +12,7 @@
 </script>
 
 <div class="banner">
-	<Image src={logo_white} alt="Logo" maxWidth={"30rem"} />
+	<Image src={logo} alt="Logo" maxWidth={"30rem"} />
 	<p class="info">
 		Lanat is a command line argument parser for Java 17 with ease of use and
 		high customization possibilities in mind.

@@ -1,6 +1,6 @@
 <script>
 	import Image from "$lib/components/Image.svelte"
-	import logo_white from "$lib/images/logo/logo_white.png"
+	import logo from "$lib/images/logo.png"
 	import KeepCentered from "$lib/components/KeepCentered.svelte"
 	import { accentTheme } from "$lib/scripts/utils"
 </script>
@@ -9,7 +9,7 @@
 	<KeepCentered>
 		<div class="content">
 			<button on:click={accentTheme.next}>
-				<Image src={logo_white} alt="Logo" maxWidth={"15rem"} />
+				<Image src={logo} alt="Logo" maxWidth={"15rem"} />
 			</button>
 			<div class="credits">
 				<span class="lowlight">Created by</span>
@@ -28,6 +28,7 @@
 
 		.content {
 			display: flex;
+			flex-wrap: wrap;
 			flex-direction: row;
 			justify-content: space-between;
 			align-items: center;

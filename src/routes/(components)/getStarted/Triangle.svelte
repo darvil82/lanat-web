@@ -4,7 +4,7 @@
 
 	export let color: CSSColor
 
-	const ANGLE = 15
+	const ANGLE = 100
 	let angle: number
 	let trig: HTMLDivElement
 	let show = false
@@ -14,7 +14,7 @@
 
 		if (window.innerHeight < top) return
 
-		angle = Math.min(ANGLE * -(top / window.innerHeight), ANGLE * 2)
+		angle = (window.innerWidth / ANGLE) * -(top / window.innerHeight)
 	}
 
 	onMount(() => {
@@ -25,13 +25,8 @@
 
 <svelte:window on:scroll={updateAngle} on:resize={updateAngle} />
 
-<div
-	class="svg-container"
-	class:show
-	style:rotate={`${angle}deg`}
-	bind:this={trig}
->
-	<svg viewBox="0 0 196 196">
+<div class="svg-container" class:show bind:this={trig}>
+	<svg viewBox="0 0 196 196" style:rotate={`${angle}deg`}>
 		<path
 			stroke="none"
 			fill={color}
@@ -42,8 +37,13 @@
 
 <style lang="scss">
 	.svg-container {
-		width: 70vw;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: max(100rem, 30vw);
 		aspect-ratio: 1;
+		translate: calc(min(30rem, 20vw) * -1);
+
 		filter: drop-shadow(0 4rem 1rem rgba(0, 0, 0, 0.2));
 		transition: opacity 0.25s;
 
