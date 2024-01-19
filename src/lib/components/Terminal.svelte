@@ -4,10 +4,7 @@
 	export let fontSize: CSSUnit = "0.85rem"
 </script>
 
-<div
-	class="code-wrapper"
-	style:font-size={`min(max(.85rem, ${fontSize}), 2rem)`}
->
+<div class="code-wrapper monospace-font-sizeable" style:--f-size={fontSize}>
 	<slot />
 </div>
 

@@ -26,10 +26,10 @@
 <svelte:window on:resize={updateOverflowing} />
 
 <div
-	class="code-wrapper"
+	class="code-wrapper monospace-font-sizeable"
 	class:bottom-overflowing={bottomOverflowing}
 	class:top-overflowing={topOverflowing}
-	style:font-size={`min(max(.85rem, ${fontSize}), 2rem)`}
+	style:--f-size={fontSize}
 >
 	<div
 		bind:this={codeWrapper}

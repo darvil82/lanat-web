@@ -107,6 +107,10 @@ code {
 	tab-size: 4;
 }
 
+.monospace-font-sizeable {
+	font-size: min(max(0.85rem, var(--f-size)), 1.1rem) !important;
+}
+
 a {
 	color: inherit;
 	text-decoration: none;
