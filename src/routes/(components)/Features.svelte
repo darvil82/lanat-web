@@ -7,6 +7,7 @@
 	import RichFormatting from "./features/RichFormatting.svelte"
 	import CustomArgTypes from "./features/CustomArgTypes.svelte"
 	import EndTriangleShape from "./features/EndTriangleShape.svelte"
+	import KeepCentered from "$lib/components/KeepCentered.svelte"
 
 	let mainDiv: HTMLDivElement
 	let featureGrid: HTMLDivElement
@@ -81,8 +82,8 @@
 		<CustomArgTypes />
 	</div>
 	<EndTriangleShape />
-	<h2 class="title-more">And much more!</h2>
 </div>
+<h2 class="title-more">And much more!</h2>
 
 <style lang="scss">
 	@use "$lib/utils.scss";
@@ -123,6 +124,9 @@
 
 	.title-more {
 		text-align: center;
+		color: var(--color-accent-2);
 		filter: drop-shadow(0 2rem 3rem utils.with-opacity(currentColor, 0.5));
+		z-index: 1;
+		mix-blend-mode: difference;
 	}
 </style>

@@ -26,7 +26,7 @@
 <svelte:window on:scroll={updateAngle} on:resize={updateAngle} />
 
 <div class="svg-container" class:show bind:this={trig}>
-	<svg viewBox="0 0 196 196" style:rotate={`${angle}deg`}>
+	<svg viewBox="0 0 196 196" style:rotate="{angle}deg">
 		<path
 			stroke="none"
 			fill={color}
