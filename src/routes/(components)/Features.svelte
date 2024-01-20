@@ -94,7 +94,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
-		font-size: 1rem;
 
 		.first-row {
 			display: grid;

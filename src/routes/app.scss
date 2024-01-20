@@ -87,7 +87,7 @@ h1 {
 }
 
 h2 {
-	font-size: 3.5em;
+	font-size: 3.5rem;
 
 	@include utils.if-tablet() {
 		font-size: min(3rem, 10vw);

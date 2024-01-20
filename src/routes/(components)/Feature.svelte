@@ -29,7 +29,7 @@
 		border-radius: var(--border-radius);
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: 1.5rem;
 		min-height: 30rem;
 
 		--shadow-top: #{utils.with-opacity(
