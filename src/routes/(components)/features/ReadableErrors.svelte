@@ -22,10 +22,10 @@
 
 		<!-- my-program josh --number 2 sub1 --required 1 --number 121 -->
 		<aqua>my-program</aqua> <yellow>josh</yellow>
-		<yellow highlight>!</yellow> <blue>--number</blue>
+		<yellow highlight>!</yellow> <green>--number</green>
 		<yellow>2</yellow> <aqua>sub1</aqua>
 		<green>--required</green> <yellow>1</yellow>
-		<purple>--number</purple> <yellow>121</yellow><br />
+		<green>--number</green> <yellow>121</yellow><br />
 
 		<!--
 						│ The user cannot be '!'.
@@ -43,10 +43,10 @@
 			<!-- my-program josh --number 2 sub1 --required 1 --number 121 -->
 			<error>&nbsp;┌─ERROR</error><br />
 			<aqua>my-program</aqua> <yellow>josh</yellow>
-			<yellow>!</yellow> <blue>--number</blue>
+			<yellow>!</yellow> <green>--number</green>
 			<yellow>2</yellow> <aqua>sub1</aqua>
 			<green>--required</green> <yellow>1</yellow>
-			<purple>--number</purple>
+			<green>--number</green>
 			<error highlight>121</error><br />
 
 			<!--
