@@ -135,7 +135,7 @@
 			text-align: center;
 		}
 
-		@media (min-width: 450px) and (max-width: 1645px) {
+		@media (min-width: 450px) and (max-width: 1540px) {
 			mix-blend-mode: difference;
 			--brightness: 1.15;
 		}
