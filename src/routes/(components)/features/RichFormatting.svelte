@@ -17,7 +17,7 @@
 			code={`
 command.setDescription(
 	"<color=cyan>Hello <format=b,i>world!<format=reset> "
-	+ "<format=u>Here's some more <color=black:magenta>text<format=reset>."
+	+ "<format=u>Here's some more <color=black:magenta>text<format=reset>"
 )`}
 		/>
 
@@ -27,7 +27,7 @@ command.setDescription(
 
 		<Terminal fontSize=".9vw">
 			<aqua>Hello <b><i>world!</i></b></aqua>
-			<u>Here's some more <purple highlight>text</purple>.</u>
+			<u>Here's some more </u><purple highlight><u>text</u></purple>
 		</Terminal>
 	</div>
 
