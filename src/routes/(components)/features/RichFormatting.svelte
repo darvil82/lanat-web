@@ -59,6 +59,7 @@ command.setDescription(
 		display: flex;
 		flex-direction: column;
 		flex-grow: 1;
+		min-height: 15rem;
 
 		> * {
 			flex-grow: 1;
