@@ -31,7 +31,7 @@ class MyProgram {
 	@Argument.Define(type = StringArgumentType.class)
 	public Optional<String> surname;
 
-	@Argument.Define(names = {"age", "a"}, prefix = '+')
+	@Argument.Define(names = {"age", "a"}, prefix = Argument.Prefix.PLUS)
 	public int age = 18;
 }
 `}
