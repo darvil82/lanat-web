@@ -22,8 +22,6 @@ $initial-accent-3: #fcff7e;
 	--border-radius: 1rem;
 
 	--default-font: "Roboto", sans-serif;
-
-	--scrollbar-size: min(0.5rem, 1vw);
 }
 
 .accent-theme-1 {
@@ -135,15 +133,15 @@ button {
 }
 
 ::-webkit-scrollbar {
+	$size: 0.5vw;
 	background-color: var(--color-primary);
-	border-radius: var(--border-radius);
-	height: var(--scrollbar-size);
-	width: var(--scrollbar-size);
+	height: $size;
+	width: $size;
 }
 
 ::-webkit-scrollbar-thumb {
 	background-color: var(--color-secondary);
-	border-radius: var(--border-radius);
+	border-radius: 10rem;
 
 	&:hover {
 		background-color: #37373d;

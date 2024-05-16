@@ -7,12 +7,10 @@
 	import RichFormatting from "./features/RichFormatting.svelte"
 	import CustomArgTypes from "./features/CustomArgTypes.svelte"
 	import EndTriangleShape from "./features/EndTriangleShape.svelte"
-	import KeepCentered from "$lib/components/KeepCentered.svelte"
 
 	let mainDiv: HTMLDivElement
 	let featureGrid: HTMLDivElement
 	let mainFeaturesContainer: HTMLDivElement
-	let currentLightOpacity = 1
 
 	const FEATURE_PROPERTY_POS = "--shadow-top-base-color"
 	const FEATURE_PROPERTY_COLOR = "var(--color-accent-2)"
@@ -70,7 +68,7 @@
 <svelte:window on:resize={updateFeaturesGlow} />
 
 <div bind:this={mainDiv}>
-	<PrettyTitle lightOpacity={currentLightOpacity} />
+	<PrettyTitle />
 	<div class="features" bind:this={mainFeaturesContainer}>
 		<div class="first-row">
 			<ReadableErrors />

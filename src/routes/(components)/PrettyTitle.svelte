@@ -1,8 +1,4 @@
-<script lang="ts">
-	export let lightOpacity = 1
-</script>
-
-<div class="pretty-title" style:--light-power={lightOpacity}>
+<div class="pretty-title">
 	<h1 class="title">Features</h1>
 	<div class="effects" />
 </div>
@@ -21,8 +17,7 @@
 			background-image: linear-gradient(
 				to right,
 				var(--color-accent-1) 70%,
-				utils.with-opacity(var(--color-accent-2), var(--light-power))
-					75%
+				var(--color-accent-2) 75%
 			);
 			animation: flickering 0.5s infinite alternate;
 
@@ -30,7 +25,7 @@
 				content: "";
 				position: absolute;
 				inset: 0;
-				height: 75rem;
+				height: min(max(50vw, 75rem), 150rem);
 				opacity: var(--light-power);
 				top: $bar-height;
 				pointer-events: none;
