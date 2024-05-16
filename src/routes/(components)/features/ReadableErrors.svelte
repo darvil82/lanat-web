@@ -13,8 +13,8 @@
 	Make the users of your software be glad they made that error. Completely
 	customizable error messages with different error levels.
 	<Terminal>
-		<!-- $ josh ! --number 2 sub1 --required 1 --number 121 -->
-		$ josh ! --number 2 sub1 --required 1 --number 121<br />
+		<!-- $ my-program josh ! --number 2 sub1 --required 1 --number 121 -->
+		$ my-program josh ! --number 2 sub1 --required 1 --number 121<br />
 		<br />
 
 		<!--  ┌─ERROR -->
