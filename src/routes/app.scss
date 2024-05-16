@@ -23,7 +23,7 @@ $initial-accent-3: #fcff7e;
 
 	--default-font: "Roboto", sans-serif;
 
-	--scrollbar-size: 0.5vw;
+	--scrollbar-size: min(0.5rem, 1vw);
 }
 
 .accent-theme-1 {
