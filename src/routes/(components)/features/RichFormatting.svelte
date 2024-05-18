@@ -5,6 +5,8 @@
 
 	import Feature from "../Feature.svelte"
 	import { faDownLong } from "@fortawesome/free-solid-svg-icons"
+	import Link from "$lib/components/Link.svelte"
+	import TextLink from "$lib/components/TextLink.svelte"
 </script>
 
 <Feature title="Rich text formatting">
@@ -33,8 +35,13 @@ command.setDescription(
 
 	<p>
 		When setting the description of elements, you can use the formatting
-		tags that Lanat provides you with. (As seen above). You are not limited
-		with just coloring or formatting, tags can also be used to <i>embed</i>
+		tags that Lanat provides you with (As seen above). You are not limited
+		with just coloring or formatting,
+		<TextLink
+			emphasis
+			href="https://darvil82.github.io/lanat-docs/description-tags.html"
+			>tags</TextLink
+		> can also be used to <i>embed</i>
 		the description of other elements, for example. Note that new custom tags
 		can be created as well, with their own functionality.
 	</p>

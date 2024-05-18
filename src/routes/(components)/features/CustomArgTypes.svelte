@@ -1,6 +1,7 @@
 <script>
 	import Code from "$lib/components/Code.svelte"
 	import Terminal from "$lib/components/Terminal.svelte"
+	import TextLink from "$lib/components/TextLink.svelte"
 	import HighlightInfo from "$lib/components/highlightInfo/HighlightInfo.svelte"
 
 	import Feature from "../Feature.svelte"
@@ -10,14 +11,22 @@
 	<div>
 		<p>
 			Effortlessly create your own sub-parsers that later will be used to
-			parse the values an argument receives. Lanat comes with many
-			Argument Types already made for you.
+			parse the values an argument receives. Lanat
+			<TextLink
+				emphasis
+				href="https://darvil82.github.io/lanat-docs/argument-types.html#default-argument-types"
+			>
+				comes with many argument types
+			</TextLink> already made for you.
 		</p>
 		<p>
-			Heres's an example of how the Argument Types are used. In this case,
-			by using the
-			<code>EnumArgumentType</code> we can create an argument that takes an
-			enum value.
+			Heres's an example of how argument types are used. In this case, by
+			using the
+			<TextLink
+				href="https://darvil82.github.io/lanat-docs/argument-types.html#51513976_25"
+				><code>EnumArgumentType</code></TextLink
+			>
+			we can create an argument that takes an enum value.
 		</p>
 	</div>
 
