@@ -36,19 +36,19 @@
  * @param <T> The enum type.
  */
 public class EnumArgumentType<T extends Enum<T>> extends ArgumentType<T> {
-	private final @NotNull T @NotNull [] values;
+	private final T[] values;
 
 	/**
 	 * Creates a new enum argument type.
 	 * @param defaultValue The default value of the enum type. This is also used to infer the type of the enum.
 	 */
-	public EnumArgumentType(@NotNull T defaultValue) {
+	public EnumArgumentType(T defaultValue) {
 		super(defaultValue);
 		this.values = defaultValue.getDeclaringClass().getEnumConstants();
 	}
 
 	@Override
-	public T parseValues(@NotNull String @NotNull [] args) {
+	public T parseValues(String[] args) {
 		for (var enumValue : this.values) {
 			if (enumValue.name().equalsIgnoreCase(args[0])) {
 				return enumValue;
@@ -59,7 +59,7 @@ public class EnumArgumentType<T extends Enum<T>> extends ArgumentType<T> {
 	}
 
 	@Override
-	public @NotNull TextFormatter getRepresentation() {
+	public TextFormatter getRepresentation() {
 		final var fmt = new TextFormatter("(");
 		for (var i = 0; i < this.values.length; i++) {
 			final var value = this.values[i];
