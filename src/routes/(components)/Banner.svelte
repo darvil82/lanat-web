@@ -3,6 +3,7 @@
 	import Image from "$lib/components/Image.svelte"
 	import logo from "$lib/images/logo.png"
 	import { createEventDispatcher } from "svelte"
+	import { slide } from "svelte/transition"
 
 	let dispatch = createEventDispatcher()
 
@@ -17,7 +18,7 @@
 		Lanat is a command line argument parser for Java 17 with ease of use and
 		high customization possibilities in mind.
 	</p>
-	<div class="buttons">
+	<div class="buttons" transition:slide={{ axis: "y" }}>
 		<Button primary on:click={showGetNow}>Get it now</Button>
 		<Button on:click={() => dispatch("clicklearnmore")}>Learn more</Button>
 	</div>
