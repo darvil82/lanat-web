@@ -23,7 +23,7 @@
 			Heres's an example of how argument types are used. In this case, by
 			using the
 			<TextLink
-				href="https://darvil82.github.io/lanat-docs/argument-types.html#51513976_25"
+				href="https://darvil82.github.io/lanat-docs/preview/argument-types.html#EnumArgumentType"
 				><code>EnumArgumentType</code></TextLink
 			>
 			we can create an argument that takes an enum value.
@@ -37,57 +37,51 @@
 			disallowScroll
 			code={`
 /**
- * An argument type that takes an enum value.
- * By supplying a default value in the constructor, the enum type is inferred.
+ * An argument type that takes a valid enum value.
  * <p>
- * The user can specify the enum value by its name, case insensitive.
+ * The user can specify any of the enum values by their names.
+ * The names are case-insensitive.
  * </p>
  * @param <T> The enum type.
  */
-public class EnumArgumentType<T extends Enum<T>> extends ArgumentType<T> {
-	private final T[] values;
-
+public class EnumArgumentType<T extends Enum<T>> extends SingleValueListArgumentType<T> {
 	/**
 	 * Creates a new enum argument type.
-	 * @param defaultValue The default value of the enum type. This is also used to infer the type of the enum.
+	 * @param clazz The class of the enum type to use.
 	 */
-	public EnumArgumentType(T defaultValue) {
-		super(defaultValue);
-		this.values = defaultValue.getDeclaringClass().getEnumConstants();
+	public EnumArgumentType(@NotNull Class<T> clazz) {
+		super(clazz.getEnumConstants());
+		this.setDefault(clazz);
+	}
+
+	/**
+	 * Sets the default value of the enum type by using the {@link Default} annotation.
+	 * @param clazz The class of the enum type to use.
+	 */
+	private void setDefault(@NotNull Class<T> clazz) {
+		var defaultFields = Arrays.stream(clazz.getDeclaredFields())
+			.filter(f -> f.isAnnotationPresent(Default.class))
+			.toList();
+
+		if (defaultFields.isEmpty())
+			return;
+
+		if (defaultFields.size() > 1)
+			throw new IllegalArgumentException("Only one default value can be set.");
+
+		this.setInitialValue(
+			Arrays.stream(this.listValues)
+				.filter(v -> v.name().equals(defaultFields.get(0).getName()))
+				.findFirst()
+				.orElseThrow()
+		);
 	}
 
 	@Override
-	public T parseValues(String[] args) {
-		for (var enumValue : this.values) {
-			if (enumValue.name().equalsIgnoreCase(args[0])) {
-				return enumValue;
-			}
-		}
-		this.addError("Invalid enum value: '" + args[0] + "'.");
-		return null;
-	}
-
-	@Override
-	public TextFormatter getRepresentation() {
-		final var fmt = new TextFormatter("(");
-		for (var i = 0; i < this.values.length; i++) {
-			final var value = this.values[i];
-
-			// if value is the default value, make it bold and yellow
-			if (value == this.getInitialValue())
-				fmt.concat(new TextFormatter(value.name())
-					.withForegroundColor(Color.YELLOW)
-					.addFormat(FormatOption.BOLD)
-				);
-			else
-				fmt.concat(value.name());
-
-
-			if (i < this.values.length - 1)
-				fmt.concat(" | ");
-		}
-		return fmt.concat(")");
-	}
+	protected @NotNull String valueToString(@NotNull T value) {
+		try {
+			return Optional.ofNullable(value.getClass().getField(value.name()).getAnnotation(WithName.class))
+				.map(WithName::value)
 `}
 		/>
 		<div class="result">
@@ -100,10 +94,11 @@ public class EnumArgumentType<T extends Enum<T>> extends ArgumentType<T> {
 				<div class="code-wrapper">
 					<Code
 						code={`
-enum Options {
+enum Option {
 	ACTIVATE,
 	DEACTIVATE,
-	TOGGLE // this is the default value
+	@EnumArgumentType.Default
+	TOGGLE
 }
 `}
 					/>
@@ -123,10 +118,10 @@ enum Options {
 				<div class="code-wrapper">
 					<Code
 						code={`
-Argument.create(
-	new EnumArgumentType<>(Options.TOGGLE),
-	"option"
-);
+public class MyCommand extends CommandTemplate {
+	@Argument.Define
+	public Option option;
+}
 `}
 					/>
 				</div>
