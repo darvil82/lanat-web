@@ -89,7 +89,8 @@ public class EnumArgumentType<T extends Enum<T>> extends SingleValueListArgument
 			<div class="result-info">
 				<div class="info">
 					Create an enum with the options you want to allow the user
-					to choose from.
+					to choose from. You can also specify the default value by
+					annotating the enum value properly.
 				</div>
 				<div class="code-wrapper">
 					<Code
@@ -107,13 +108,8 @@ enum Option {
 
 			<div class="result-info">
 				<div class="info">
-					<p>
-						Then, create an <code>EnumArgumentType</code>
-						with the default value we want to use specified in the constructor.
-					</p>
-					<p>
-						Once created, we can use it in an <code>Argument</code>.
-					</p>
+					Then, simply define the argument in your command and use the
+					enum as the type of the argument.
 				</div>
 				<div class="code-wrapper">
 					<Code

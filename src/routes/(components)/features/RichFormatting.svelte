@@ -34,14 +34,12 @@ command.setDescription(
 	</div>
 
 	<p>
-		When setting the description of elements, you can use the formatting
-		tags that Lanat provides you with (As seen above). You are not limited
-		with just coloring or formatting,
-		<TextLink
+		When setting the description of elements, you can use the <TextLink
 			emphasis
 			href="https://darvil82.github.io/lanat-docs/description-tags.html"
-			>tags</TextLink
-		> can also be used to <i>embed</i>
+			>formatting tags</TextLink
+		> that Lanat provides you with (As seen above). You are not limited with
+		just coloring or formatting, tags can also be used to <i>embed</i>
 		the description of other elements, for example. Note that new custom tags
 		can be created as well, with their own functionality.
 	</p>
