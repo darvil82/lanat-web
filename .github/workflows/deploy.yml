@@ -25,24 +25,27 @@ jobs:
             - name: Install dependencies
               run: pnpm install
 
-            - name: build
+            - name: Build
               env:
                   BASE_PATH: "/${{ github.event.repository.name }}"
               run: |
                   pnpm run build
 
+            - name: Debug Build Output
+              run: ls -lah build/
+
             - name: Upload Artifacts
               uses: actions/upload-pages-artifact@v3
               with:
                   name: github-pages
-                  # this should match the `pages` option in your adapter-static options
-                  path: "build/"
+                  path: "./build"
 
     deploy:
         needs: build_site
         runs-on: ubuntu-latest
 
         permissions:
+            contents: read
             pages: write
             id-token: write
 
@@ -54,3 +57,5 @@ jobs:
             - name: Deploy
               id: deployment
               uses: actions/deploy-pages@v3
+              with:
+                  artifact_name: github-pages
