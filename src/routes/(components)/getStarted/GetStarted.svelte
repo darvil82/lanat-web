@@ -27,7 +27,7 @@
 					<div class="step">
 						<h3>Add the repository</h3>
 						<Terminal fontSize="1vw">
-							https://repsy.io/mvn/darvil/java
+							https://api.repsy.io/mvn/darvil/
 						</Terminal>
 					</div>
 					<div class="step highlight">
