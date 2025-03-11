@@ -9,43 +9,39 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
 
             - name: Install pnpm
-              uses: pnpm/action-setup@v2
+              uses: pnpm/action-setup@v3
               with:
                   version: 8
 
             - name: Install Node.js
-              uses: actions/setup-node@v3
+              uses: actions/setup-node@v4
               with:
-                  node-version: 18
+                  node-version: 20
                   cache: pnpm
 
             - name: Install dependencies
               run: pnpm install
 
-            - name: Build
+            - name: build
               env:
                   BASE_PATH: "/${{ github.event.repository.name }}"
               run: |
                   pnpm run build
 
-            - name: Debug Build Output
-              run: ls -lah build/
-
             - name: Upload Artifacts
               uses: actions/upload-pages-artifact@v3
               with:
-                  name: github-pages
-                  path: "./build"
+                  # this should match the `pages` option in your adapter-static options
+                  path: "build/"
 
     deploy:
         needs: build_site
         runs-on: ubuntu-latest
 
         permissions:
-            contents: read
             pages: write
             id-token: write
 
@@ -56,6 +52,4 @@ jobs:
         steps:
             - name: Deploy
               id: deployment
-              uses: actions/deploy-pages@v3
-              with:
-                  artifact_name: github-pages
+              uses: actions/deploy-pages@v4
