@@ -84,8 +84,6 @@
 <h2 class="title-more">And much more!</h2>
 
 <style lang="scss">
-	@use "$lib/utils.scss";
-
 	.features {
 		margin: 5rem;
 		margin-top: 5rem;
@@ -98,7 +96,7 @@
 			gap: 2rem;
 			grid-template-columns: minmax(40rem, 1fr) 1fr;
 
-			@include utils.if-tablet() {
+			@include if-tablet() {
 				grid-template-columns: minmax(10rem, 1fr);
 			}
 		}
@@ -108,12 +106,12 @@
 			gap: 2rem;
 			grid-template-columns: repeat(auto-fit, minmax(47rem, 1fr));
 
-			@include utils.if-tablet() {
+			@include if-tablet() {
 				grid-template-columns: minmax(10rem, 1fr);
 			}
 		}
 
-		@include utils.if-tablet {
+		@include if-tablet {
 			margin: 2rem;
 			margin-top: 5rem;
 		}
@@ -122,13 +120,13 @@
 	.title-more {
 		text-align: right;
 		color: var(--color-accent-2);
-		filter: drop-shadow(0 2rem 3rem utils.with-opacity(currentColor, 0.5))
+		filter: drop-shadow(0 2rem 3rem with-opacity(currentColor, 0.5))
 			brightness(var(--brightness, 1));
 		z-index: 1;
 		padding-right: 20vw;
 		margin-top: -5rem;
 
-		@include utils.if-tablet() {
+		@include if-tablet() {
 			padding-right: 0;
 			text-align: center;
 		}

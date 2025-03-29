@@ -5,8 +5,6 @@
 </div>
 
 <style lang="scss">
-	@use "$lib/utils.scss";
-
 	.keep-centered {
 		--margin: 5rem;
 		display: grid;
@@ -14,7 +12,7 @@
 			minmax(var(--margin), 1fr)
 			minmax(200px, 1100px) minmax(var(--margin), 1fr);
 
-		@include utils.if-mobile {
+		@include if-mobile {
 			--margin: 2rem;
 		}
 

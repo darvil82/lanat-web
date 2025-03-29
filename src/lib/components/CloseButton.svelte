@@ -9,8 +9,6 @@
 </button>
 
 <style lang="scss">
-	@use "$lib/utils.scss";
-
 	button {
 		background-color: var(--color-text-over-light);
 		padding: 1rem 2rem;
@@ -22,12 +20,12 @@
 			background: linear-gradient(
 				to top,
 				var(--color-text-over-dark) 60%,
-				utils.with-opacity(var(--color-text-over-dark), 0.5)
+				with-opacity(var(--color-text-over-dark), 0.5)
 			);
 			color: var(--color-text-over-light);
 		}
 
-		@include utils.if-mobile {
+		@include if-mobile {
 			padding: 0.5rem 1rem;
 		}
 	}

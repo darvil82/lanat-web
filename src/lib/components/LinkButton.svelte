@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Link from "./Link.svelte"
+	import "./button.scss"
 
 	export let primary = false
 	export let href: string
@@ -10,7 +11,3 @@
 		<slot />
 	</div>
 </Link>
-
-<style lang="scss">
-	@import "./button.scss";
-</style>

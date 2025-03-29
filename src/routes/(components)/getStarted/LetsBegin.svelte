@@ -17,9 +17,8 @@
 </div>
 
 <style lang="scss">
-	@use "$lib/utils.scss";
-
-	$bg: radial-gradient(
+	$bg:
+		radial-gradient(
 			50.35% 131.74% at 69.37% -58.95%,
 			var(--color-accent-3) 0%,
 			rgba(112, 221, 201, 0) 100%
@@ -42,7 +41,7 @@
 		min-width: 55rem;
 		max-width: 80rem;
 		border-radius: var(--border-radius);
-		box-shadow: utils.$clay-shadow;
+		box-shadow: $clay-shadow;
 		background: $bg;
 
 		&::before {
@@ -54,13 +53,13 @@
 			filter: blur(3rem);
 		}
 
-		@include utils.if-tablet {
+		@include if-tablet {
 			padding: 2rem;
 			min-width: unset;
 			width: 90vw;
 		}
 
-		@include utils.if-mobile {
+		@include if-mobile {
 			padding: 1.5rem;
 			align-items: stretch;
 		}

@@ -74,8 +74,6 @@ The surname of the user is none.
 </section>
 
 <style lang="scss">
-	@use "$lib/utils.scss";
-
 	.entrance {
 		$margin: 2rem;
 		display: grid;
@@ -110,7 +108,7 @@ The surname of the user is none.
 			grid-row: 7 / 12;
 		}
 
-		@include utils.if-tablet {
+		@include if-tablet {
 			display: flex;
 			flex-direction: column;
 		}

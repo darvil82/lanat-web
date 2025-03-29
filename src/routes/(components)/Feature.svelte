@@ -20,11 +20,9 @@
 </div>
 
 <style lang="scss">
-	@use "$lib/utils.scss";
-
 	.feature {
 		padding: 2rem;
-		background-color: utils.with-opacity(var(--color-secondary), 0.7);
+		background-color: with-opacity(var(--color-secondary), 0.7);
 		backdrop-filter: blur(5rem);
 		border-radius: var(--border-radius);
 		display: flex;
@@ -32,11 +30,11 @@
 		gap: 1.5rem;
 		min-height: 30rem;
 
-		--shadow-top: #{utils.with-opacity(
+		--shadow-top: #{with-opacity(
 				var(--shadow-top-base-color),
 				calc(0.2 * var(--light-power-top))
 			)};
-		--shadow-right: #{utils.with-opacity(
+		--shadow-right: #{with-opacity(
 				var(--shadow-right-base-color),
 				calc(0.2 * var(--light-power-right))
 			)};
@@ -47,7 +45,7 @@
 			inset 0 12rem $shadow-size -10rem var(--shadow-top),
 			0 12rem 4rem -10rem rgba(0, 0, 0, 0.2);
 
-		@include utils.if-mobile {
+		@include if-mobile {
 			padding: 1.5rem;
 		}
 	}

@@ -15,8 +15,6 @@
 </Link>
 
 <style lang="scss">
-	@use "$lib/utils.scss";
-
 	.link-wrapper {
 		background-color: var(--color-secondary);
 		color: var(--color-text-over-dark);
@@ -32,12 +30,12 @@
 		aspect-ratio: 1;
 		width: 15rem;
 
-		@include utils.if-tablet {
+		@include if-tablet {
 			width: 12rem;
 			font-size: 1.5rem;
 		}
 
-		@include utils.if-mobile {
+		@include if-mobile {
 			width: 7.5rem;
 			font-size: 1rem;
 		}

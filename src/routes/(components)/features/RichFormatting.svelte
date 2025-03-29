@@ -46,14 +46,12 @@ command.setDescription(
 </Feature>
 
 <style lang="scss">
-	@use "$lib/utils.scss";
-
 	.arrow-icon {
 		display: grid;
 		place-items: center;
 		z-index: 1;
 
-		@include utils.if-tablet {
+		@include if-tablet {
 			place-items: end;
 
 			margin-right: 5rem;

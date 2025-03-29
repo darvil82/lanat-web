@@ -25,8 +25,6 @@
 </div>
 
 <style lang="scss">
-	@use "$lib/utils.scss";
-
 	.banner {
 		background-color: var(--color-secondary);
 		height: 100%;
@@ -38,7 +36,7 @@
 		justify-content: center;
 		gap: 2.5rem;
 
-		@include utils.if-mobile {
+		@include if-mobile {
 			padding: 1.5rem;
 		}
 	}

@@ -47,8 +47,6 @@
 </div>
 
 <style lang="scss">
-	@use "$lib/utils.scss";
-
 	.get-started-wrapper {
 		overflow-x: clip;
 		margin-top: calc(max(100rem, 30vw) * -0.5);
@@ -104,7 +102,7 @@
 				box-shadow: 0 0 2rem 0 rgba(0 0 0 / 0.3);
 			}
 
-			@include utils.if-mobile {
+			@include if-mobile {
 				padding: 1rem 1.5rem;
 			}
 		}

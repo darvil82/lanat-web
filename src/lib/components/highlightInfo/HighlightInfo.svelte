@@ -61,8 +61,6 @@
 </button>
 
 <style lang="scss">
-	@use "$lib/utils.scss";
-
 	.highlight {
 		position: relative;
 		padding: 0.25rem;
@@ -70,13 +68,13 @@
 		cursor: pointer;
 		text-align: left;
 		border-radius: calc(var(--border-radius) / 2);
-		background-color: utils.with-opacity(var(--color-secondary), 0.5);
+		background-color: with-opacity(var(--color-secondary), 0.5);
 		outline: 3px dashed var(--color-tertiary);
 		transition: 0.25s;
 
 		&:hover {
 			outline-style: solid;
-			background-color: utils.with-opacity(var(--color-secondary), 0.75);
+			background-color: with-opacity(var(--color-secondary), 0.75);
 		}
 
 		&.eyegrabber::after {

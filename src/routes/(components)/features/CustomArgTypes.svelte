@@ -155,8 +155,6 @@ public class MyCommand extends CommandTemplate {
 </Feature>
 
 <style lang="scss">
-	@use "$lib/utils.scss";
-
 	.codes {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
@@ -167,23 +165,23 @@ public class MyCommand extends CommandTemplate {
 			grid-row: 1 / span 3;
 			max-height: 50rem;
 
-			@include utils.if-tablet {
+			@include if-tablet {
 				grid-column: 1;
 				grid-row: 1 / 4;
 				margin-inline: 1rem;
 			}
 
-			@include utils.if-mobile {
+			@include if-mobile {
 				height: 30rem;
 			}
 		}
 
-		@include utils.if-tablet {
+		@include if-tablet {
 			grid-template-columns: 1fr;
 			grid-template-rows: 1fr 1fr 1fr;
 		}
 
-		@include utils.if-mobile {
+		@include if-mobile {
 			display: flex;
 			flex-direction: column;
 		}
@@ -223,7 +221,7 @@ public class MyCommand extends CommandTemplate {
 				flex-grow: 1;
 			}
 
-			@include utils.if-tablet {
+			@include if-tablet {
 				grid-template-columns: minmax(10rem, 1fr);
 				grid-template-rows: 1fr 1fr;
 				gap: 1rem;
@@ -231,20 +229,20 @@ public class MyCommand extends CommandTemplate {
 				padding: 1rem;
 			}
 
-			@include utils.if-mobile {
+			@include if-mobile {
 				.info {
 					margin: 0;
 				}
 			}
 		}
 
-		@include utils.if-tablet {
+		@include if-tablet {
 			grid-column: 1;
 			grid-row: 2 / 4;
 			box-shadow: 0 -2rem 5rem rgba(0, 0, 0, 0.575);
 		}
 
-		@include utils.if-mobile {
+		@include if-mobile {
 			display: flex;
 			flex-direction: column;
 			margin-top: -5rem;

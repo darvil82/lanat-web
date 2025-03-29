@@ -1,4 +1,3 @@
-@use "$lib/utils.scss";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap");
 
@@ -79,7 +78,7 @@ h3 {
 h1 {
 	font-size: 8rem;
 
-	@include utils.if-tablet() {
+	@include if-tablet() {
 		font-size: min(6rem, 15vw);
 	}
 }
@@ -87,7 +86,7 @@ h1 {
 h2 {
 	font-size: 3.5rem;
 
-	@include utils.if-tablet() {
+	@include if-tablet() {
 		font-size: min(3rem, 10vw);
 	}
 }
@@ -95,7 +94,7 @@ h2 {
 h3 {
 	font-size: 2rem;
 
-	@include utils.if-tablet() {
+	@include if-tablet() {
 		font-size: min(1.5rem, 7vw);
 	}
 }

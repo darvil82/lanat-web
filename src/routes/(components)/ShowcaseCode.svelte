@@ -32,15 +32,13 @@
 </div>
 
 <style lang="scss">
-	@use "$lib/utils.scss";
-
 	.showcase-code {
 		display: flex;
 		flex-direction: column;
 		background-image: linear-gradient(
 			100deg,
 			var(--color-secondary) 20%,
-			utils.with-opacity(var(--gradient), 0.5)
+			with-opacity(var(--gradient), 0.5)
 		);
 		background-size: 300% 100%;
 		height: 100%;

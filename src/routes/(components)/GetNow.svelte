@@ -117,8 +117,6 @@
 {/if}
 
 <style lang="scss">
-	@use "$lib/utils.scss";
-
 	.get-now {
 		position: absolute;
 		inset: 0;
@@ -134,7 +132,7 @@
 		padding: 7rem;
 		padding-top: 15rem;
 		z-index: 1;
-		box-shadow: utils.$clay-shadow;
+		box-shadow: $clay-shadow;
 
 		transition:
 			all 0.75s,
@@ -157,7 +155,7 @@
 				flex-wrap: wrap;
 				gap: 2rem;
 
-				@include utils.if-mobile {
+				@include if-mobile {
 					gap: 1rem;
 				}
 			}
@@ -169,13 +167,13 @@
 			right: 2rem;
 		}
 
-		@include utils.if-tablet {
+		@include if-tablet {
 			position: fixed;
 			padding: 2rem;
 			padding-top: 10rem;
 		}
 
-		@include utils.if-mobile {
+		@include if-mobile {
 			padding: 1rem;
 			padding-top: 9rem;
 		}
@@ -203,7 +201,7 @@
 			width: 100% !important; // to quickly override the width set with ts
 		}
 
-		@include utils.if-tablet {
+		@include if-tablet {
 			position: fixed;
 
 			&.animate {
@@ -213,7 +211,7 @@
 			}
 		}
 
-		@include utils.if-mobile {
+		@include if-mobile {
 			&.animate {
 				font-size: 3.5rem;
 				translate: -5.75rem -1rem;

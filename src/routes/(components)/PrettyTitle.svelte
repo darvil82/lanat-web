@@ -4,8 +4,6 @@
 </div>
 
 <style lang="scss">
-	@use "$lib/utils.scss";
-
 	.pretty-title {
 		display: flex;
 		flex-direction: column;
@@ -38,7 +36,7 @@
 					rgba(81, 162, 147, 0) 360deg
 				);
 
-				@include utils.mask-image(
+				@include mask-image(
 					linear-gradient(
 						10deg,
 						transparent 30%,
