@@ -20,7 +20,7 @@
 			</TextLink> already made for you.
 		</p>
 		<p>
-			Heres's an example of how argument types are used. In this case, by
+			Here's an example of how argument types are used. In this case, by
 			using the
 			<TextLink
 				href="https://darvil82.github.io/lanat-docs/preview/argument-types.html#EnumArgumentType"
