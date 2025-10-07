@@ -1,7 +1,7 @@
 <script lang="ts">
+	import Link from "$lib/components/Link.svelte"
 	import type { IconDefinition } from "@fortawesome/free-solid-svg-icons"
 	import Fa from "svelte-fa"
-	import Link from "$lib/components/Link.svelte"
 
 	export let href: string
 	export let icon: IconDefinition

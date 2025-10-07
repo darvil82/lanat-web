@@ -1,9 +1,9 @@
 <script lang="ts">
 	import IconLink from "$lib/components/BigLink.svelte"
 	import CloseButton from "$lib/components/CloseButton.svelte"
-	import { slide, fly } from "svelte/transition"
-	import { faJava, faGithub } from "@fortawesome/free-brands-svg-icons"
 	import { isTablet, setScrollingEnabled } from "$lib/scripts/utils"
+	import { faGithub, faJava } from "@fortawesome/free-brands-svg-icons"
+	import { fly, slide } from "svelte/transition"
 
 	let shown = false
 	let animateTitle = false
@@ -99,13 +99,13 @@
 				<h3>Get it on</h3>
 				<div class="links">
 					<IconLink
-						href="https://darvil82.github.io/lanat-docs/acquire-lanat.html"
+						href="https://central.sonatype.com/artifact/io.github.darvil82/lanat"
 						icon={faJava}
 					>
-						Maven
+						Maven Central
 					</IconLink>
 					<IconLink
-						href="https://github.com/DarviL82/Lanat/packages/"
+						href="https://github.com/DarviL82/Lanat"
 						icon={faGithub}
 					>
 						Github

@@ -5,9 +5,8 @@
 <div class="lets-begin">
 	<h1>Let's begin</h1>
 	<p>
-		If you aren't feeling brave, feel free to check out the wiki, which
-		includes a full tutorial on how to get started with the basics of Lanat
-		(and the not so-basic stuff!)
+		Ready? Check out the documentation to get to know the basic (and the not
+		so-basic) features of Lanat!
 	</p>
 	<LinkButton
 		href="https://darvil82.github.io/lanat-docs/discover-lanat.html"

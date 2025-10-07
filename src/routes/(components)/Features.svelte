@@ -1,12 +1,13 @@
 <script lang="ts">
-	import { onMount } from "svelte"
-	import PrettyTitle from "./PrettyTitle.svelte"
+	import KeepCentered from "$lib/components/KeepCentered.svelte"
 	import { isTablet } from "$lib/scripts/utils"
-	import ReadableErrors from "./features/ReadableErrors.svelte"
+	import { onMount } from "svelte"
 	import AutomatedHelpMessage from "./features/AutomatedHelpMessage.svelte"
-	import RichFormatting from "./features/RichFormatting.svelte"
 	import CustomArgTypes from "./features/CustomArgTypes.svelte"
 	import EndTriangleShape from "./features/EndTriangleShape.svelte"
+	import ReadableErrors from "./features/ReadableErrors.svelte"
+	import RichFormatting from "./features/RichFormatting.svelte"
+	import PrettyTitle from "./PrettyTitle.svelte"
 
 	let mainDiv: HTMLDivElement
 	let featureGrid: HTMLDivElement
@@ -69,17 +70,19 @@
 
 <div bind:this={mainDiv}>
 	<PrettyTitle />
-	<div class="features" bind:this={mainFeaturesContainer}>
-		<div class="first-row">
-			<ReadableErrors />
+	<KeepCentered bigger>
+		<div class="features" bind:this={mainFeaturesContainer}>
+			<div class="first-row">
+				<ReadableErrors />
+			</div>
+			<div class="grid" bind:this={featureGrid}>
+				<AutomatedHelpMessage />
+				<RichFormatting />
+			</div>
+			<CustomArgTypes />
 		</div>
-		<div class="grid" bind:this={featureGrid}>
-			<AutomatedHelpMessage />
-			<RichFormatting />
-		</div>
-		<CustomArgTypes />
-	</div>
-	<EndTriangleShape />
+		<EndTriangleShape />
+	</KeepCentered>
 </div>
 <h2 class="title-more">And much more!</h2>
 

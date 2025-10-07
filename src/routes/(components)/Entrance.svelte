@@ -1,7 +1,8 @@
 <script lang="ts">
+	import KeepCentered from "$lib/components/KeepCentered.svelte"
 	import Banner from "./Banner.svelte"
-	import ShowcaseCode from "./ShowcaseCode.svelte"
 	import GetNowOverlay from "./GetNow.svelte"
+	import ShowcaseCode from "./ShowcaseCode.svelte"
 
 	let getNowOverlay: GetNowOverlay
 
@@ -10,19 +11,23 @@
 	}
 </script>
 
-<section class="entrance">
-	<GetNowOverlay bind:this={getNowOverlay} />
+<KeepCentered bigger>
+	<section class="entrance">
+		<GetNowOverlay bind:this={getNowOverlay} />
 
-	<div class="showcase-banner">
-		<Banner on:clickgetnow={e => showGetInfo(e.detail)} on:clicklearnmore />
-	</div>
+		<div class="showcase-banner">
+			<Banner
+				on:clickgetnow={e => showGetInfo(e.detail)}
+				on:clicklearnmore
+			/>
+		</div>
 
-	<div class="showcase-1">
-		<ShowcaseCode
-			number={1}
-			gradientColor="var(--color-accent-1)"
-			title="Define your Command"
-			code={`
+		<div class="showcase-1">
+			<ShowcaseCode
+				number={1}
+				gradientColor="var(--color-accent-1)"
+				title="Define your Command"
+				code={`
 @Command.Define
 class MyProgram {
 	@Argument.Define(required = true, positional = true)
@@ -35,15 +40,15 @@ class MyProgram {
 	public int age = 18;
 }
 `}
-		/>
-	</div>
+			/>
+		</div>
 
-	<div class="showcase-2">
-		<ShowcaseCode
-			number={2}
-			gradientColor="var(--color-accent-2)"
-			title="Put the stuff together"
-			code={`
+		<div class="showcase-2">
+			<ShowcaseCode
+				number={2}
+				gradientColor="var(--color-accent-2)"
+				title="Put the stuff together"
+				code={`
 public static void main(String[] args) {
     var myProgram = ArgumentParser.parseFromInto(MyProgram.class, args);
 
@@ -56,22 +61,23 @@ public static void main(String[] args) {
     System.out.printf("The surname of the user is %s.", myProgram.surname.orElse("none"));
 }
 `}
-		/>
-	</div>
+			/>
+		</div>
 
-	<div class="showcase-3">
-		<ShowcaseCode
-			number={3}
-			gradientColor="var(--color-accent-3)"
-			title="And use it"
-			code={`
+		<div class="showcase-3">
+			<ShowcaseCode
+				number={3}
+				gradientColor="var(--color-accent-3)"
+				title="And use it"
+				code={`
 $ my-program michael +a20
 Welcome michael! You are 20 years old.
 The surname of the user is none.
 `}
-		/>
-	</div>
-</section>
+			/>
+		</div>
+	</section>
+</KeepCentered>
 
 <style lang="scss">
 	.entrance {

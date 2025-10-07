@@ -1,4 +1,8 @@
-<div class="keep-centered">
+<script lang="ts">
+	export let bigger = false
+</script>
+
+<div class="keep-centered" class:bigger>
 	<div class="content">
 		<slot />
 	</div>
@@ -18,6 +22,13 @@
 
 		.content {
 			grid-column: 2;
+		}
+
+		&.bigger {
+			--margin: 0rem;
+			grid-template-columns:
+				minmax(var(--margin), 1fr)
+				minmax(200px, 1900px) minmax(var(--margin), 1fr);
 		}
 	}
 </style>
