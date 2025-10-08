@@ -12,6 +12,7 @@
 
 	export function show(anchor: HTMLElement) {
 		let newPos: Omit<typeof anchorPos, "width">
+		if (shown) return
 
 		if (isTablet()) {
 			setScrollingEnabled(false)
