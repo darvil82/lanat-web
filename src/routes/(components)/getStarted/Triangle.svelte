@@ -14,7 +14,7 @@
 
 		if (window.innerHeight < top) return
 
-		angle = (window.innerWidth / ANGLE) * -(top / window.innerHeight)
+		angle = (window.innerWidth / ANGLE) * -(top / window.innerHeight) - 10
 	}
 
 	onMount(() => {

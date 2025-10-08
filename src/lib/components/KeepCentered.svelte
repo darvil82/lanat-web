@@ -25,7 +25,7 @@
 		}
 
 		&.bigger {
-			--margin: 0rem;
+			--margin: 1rem;
 			grid-template-columns:
 				minmax(var(--margin), 1fr)
 				minmax(200px, 1900px) minmax(var(--margin), 1fr);

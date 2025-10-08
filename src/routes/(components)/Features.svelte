@@ -84,11 +84,9 @@
 		<EndTriangleShape />
 	</KeepCentered>
 </div>
-<h2 class="title-more">And much more!</h2>
 
 <style lang="scss">
 	.features {
-		margin: 5rem;
 		margin-top: 5rem;
 		display: flex;
 		flex-direction: column;
@@ -115,28 +113,7 @@
 		}
 
 		@include if-tablet {
-			margin: 2rem;
 			margin-top: 5rem;
-		}
-	}
-
-	.title-more {
-		text-align: right;
-		color: var(--color-accent-2);
-		filter: drop-shadow(0 2rem 3rem with-opacity(currentColor, 0.5))
-			brightness(var(--brightness, 1));
-		z-index: 1;
-		padding-right: 20vw;
-		margin-top: -5rem;
-
-		@include if-tablet() {
-			padding-right: 0;
-			text-align: center;
-		}
-
-		@media (min-width: 450px) and (max-width: 1540px) {
-			mix-blend-mode: difference;
-			--brightness: 1.15;
 		}
 	}
 </style>

@@ -88,7 +88,7 @@ The surname of the user is none.
 				1.25fr
 			);
 		gap: 2rem;
-		margin: $margin;
+		margin-block: $margin;
 		position: relative;
 		border-radius: var(--border-radius);
 		overflow: hidden;
