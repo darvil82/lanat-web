@@ -1,15 +1,15 @@
 <script>
+	import { page } from "$app/stores"
+	import Link from "$lib/components/Link.svelte"
+	import logo from "$lib/images/logo.svg"
 	import { accentTheme } from "$lib/scripts/utils"
+	import { faGithub } from "@fortawesome/free-brands-svg-icons"
 	import { onMount } from "svelte"
+	import Fa from "svelte-fa"
+	import "svelte-highlight/styles/github-dark.css"
+	import { fly } from "svelte/transition"
 	import Footer from "./(components)/Footer.svelte"
 	import "./app.scss"
-	import "svelte-highlight/styles/github-dark.css"
-	import { page } from "$app/stores"
-	import logo from "$lib/images/logo.png"
-	import Fa from "svelte-fa"
-	import { faGithub } from "@fortawesome/free-brands-svg-icons"
-	import { fly } from "svelte/transition"
-	import Link from "$lib/components/Link.svelte"
 
 	let showGithubButton = false
 

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button from "$lib/components/Button.svelte"
 	import Image from "$lib/components/Image.svelte"
-	import logo from "$lib/images/logo.png"
+	import logo from "$lib/images/logo.svg"
 	import { createEventDispatcher } from "svelte"
 	import { slide } from "svelte/transition"
 

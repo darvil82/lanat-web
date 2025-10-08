@@ -2,7 +2,7 @@
 	import Image from "$lib/components/Image.svelte"
 	import KeepCentered from "$lib/components/KeepCentered.svelte"
 	import TextLink from "$lib/components/TextLink.svelte"
-	import logo from "$lib/images/logo.png"
+	import logo from "$lib/images/logo.svg"
 	import { accentTheme } from "$lib/scripts/utils"
 </script>
 
