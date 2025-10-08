@@ -16,10 +16,6 @@
 		padding: 1rem;
 		border-radius: var(--border-radius);
 		font-family: "Jetbrains Mono";
-
-		* {
-			white-space: pre;
-		}
 	}
 
 	@mixin color-tag($tagname, $color) {
