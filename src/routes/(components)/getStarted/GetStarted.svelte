@@ -13,7 +13,7 @@
 		</div>
 	</KeepCentered>
 
-	<div class="arrow" />
+	<div class="arrow"></div>
 
 	<div class="lets-begin">
 		<LetsBegin />
@@ -42,6 +42,7 @@
 	.arrow {
 		position: relative;
 		width: 1rem;
+		z-index: -1;
 		flex-grow: 1;
 		background-color: var(--color-accent-3);
 
