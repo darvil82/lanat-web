@@ -189,10 +189,11 @@
 		z-index: 2;
 		color: var(--color-secondary);
 		font-size: min(3rem, 10vw);
-		padding: 0.5rem 3rem;
+		padding: 0.5rem min(3rem, 10vw);
 		font-weight: 900;
 		text-align: center;
 		pointer-events: none;
+		text-wrap: nowrap;
 
 		&.animate {
 			transition: all 0.75s;
