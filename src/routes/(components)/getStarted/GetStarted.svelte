@@ -34,11 +34,6 @@
 		@include if-tablet() {
 			padding-left: 0;
 		}
-
-		@media (min-width: 450px) and (max-width: 1540px) {
-			mix-blend-mode: difference;
-			--brightness: 1.15;
-		}
 	}
 
 	.get-started-wrapper {

@@ -193,7 +193,6 @@
 		font-weight: 900;
 		text-align: center;
 		pointer-events: none;
-		text-wrap: nowrap;
 
 		&.animate {
 			transition: all 0.75s;
@@ -205,6 +204,7 @@
 
 		@include if-tablet {
 			position: fixed;
+			text-wrap: nowrap;
 
 			&.animate {
 				// we change this here so that if the window is resized, the title moves with it

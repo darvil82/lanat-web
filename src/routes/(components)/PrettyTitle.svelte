@@ -1,6 +1,12 @@
+<script>
+	import KeepCentered from "$lib/components/KeepCentered.svelte"
+</script>
+
 <div class="pretty-title">
-	<h1 class="title">Features</h1>
-	<div class="effects" />
+	<KeepCentered bigger>
+		<h1 class="title">Features</h1>
+	</KeepCentered>
+	<div class="effects"></div>
 </div>
 
 <style lang="scss">
@@ -51,6 +57,5 @@
 
 	.title {
 		color: var(--color-accent-1);
-		margin-left: min(7rem, 10vw);
 	}
 </style>

@@ -16,19 +16,19 @@
 			minmax(var(--margin), 1fr)
 			minmax(200px, 1100px) minmax(var(--margin), 1fr);
 
-		@include if-mobile {
-			--margin: 2rem;
-		}
-
 		.content {
 			grid-column: 2;
 		}
 
 		&.bigger {
-			--margin: 1rem;
+			--margin: 3rem;
 			grid-template-columns:
 				minmax(var(--margin), 1fr)
 				minmax(200px, 1900px) minmax(var(--margin), 1fr);
+
+			@include if-tablet {
+				--margin: 1rem;
+			}
 		}
 	}
 </style>
