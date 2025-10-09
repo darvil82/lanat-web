@@ -6,20 +6,18 @@
 	import { slide } from "svelte/transition"
 
 	let dispatch = createEventDispatcher()
-
-	function showGetNow(e: MouseEvent) {
-		dispatch("clickgetnow", e.target)
-	}
 </script>
 
 <div class="banner">
-	<Image src={logo} alt="Logo" maxWidth={"30rem"} />
+	<Image src={logo} alt="Logo" maxWidth={"40rem"} />
 	<p class="info">
 		Lanat is a command line argument parser for Java 17 with ease of use and
 		high customization possibilities in mind.
 	</p>
 	<div class="buttons" transition:slide={{ axis: "y" }}>
-		<Button primary on:click={showGetNow}>Get it now</Button>
+		<Button primary on:click={e => dispatch("clickgetnow", e.target)}>
+			Get it now
+		</Button>
 		<Button on:click={() => dispatch("clicklearnmore")}>Learn more</Button>
 	</div>
 </div>
