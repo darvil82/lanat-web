@@ -50,6 +50,7 @@
 		inset: 0;
 		height: calc(max(100rem, 30vw));
 		pointer-events: none;
+		z-index: 2;
 
 		@include if-tablet {
 			display: none;
@@ -60,7 +61,7 @@
 		position: relative;
 		width: 1rem;
 		height: 100rem;
-		z-index: -1;
+		z-index: 1;
 		flex-grow: 1;
 		background: linear-gradient(
 			to bottom,
@@ -78,7 +79,6 @@
 			aspect-ratio: 1;
 			border-radius: 50%;
 			background-color: var(--color-accent-3);
-			z-index: 1;
 		}
 
 		@include if-tablet {

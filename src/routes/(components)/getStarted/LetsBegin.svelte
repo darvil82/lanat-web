@@ -42,7 +42,6 @@
 		border-radius: var(--border-radius);
 		box-shadow: $clay-shadow;
 		background: $bg;
-		z-index: -2;
 
 		&::before {
 			content: "";
